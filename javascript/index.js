@@ -11,6 +11,7 @@ $(document).ready(function(){
     $(".slide").not(":first").css({"width":"48px"});
     $(".pageWrap").eq(0).show();
     $(".bannerTxt").eq(0).show();
+    $("#prev_2").addClass("hide");
 })
 
 function prev() {
@@ -37,10 +38,10 @@ function next(){
 
 var time = setInterval(next, 4000);
 
-$("#slides ul").hover(function(){
+$("#banner .wrap ul").hover(function(){
     clearInterval(time);
 }, function(){
-    time = setInterval(next, 4000);
+    setTimeout(time = setInterval(next, 4000),2000);
 })
 
 $("#prev").on("click", function(){
@@ -54,4 +55,64 @@ $("#next").on("click", function(){
 for(i=1; i<11; i++){
     $("#slide_"+i).css("background","url(img/banner_"+i+".webp)")
 }
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "추천", size: 7},
+    headers: { Authorization: "KakaoAK ddf7da74924187d0c803e6910e6b67bc" }
+})
+
+    .done(function (msg) {
+        for (var i=0;i<8;i++){
+        $(".thumb").eq(i).append("<img src="+msg.documents[i].thumbnail+">");
+        $(".bookTxt").eq(i).append("<h2>"+msg.documents[i].contents.substring(0,30)+"...</h2>","<p>"+msg.documents[i].title.substring(0,15)+"</p>");
+        var title=msg.documents[i].title;
+        if(title.length>15){
+            $(".bookTxt p").eq(i).append("...");
+        }
+        }
+    });
+
+
+
+var index = 0;
+
+function next_2(index) {
+    $("#slidesWrap_2").stop().animate({"marginLeft": - 1134 * (index) + "px"},"slow","linear");
+}
+
+function next_2_1(index) {
+    $("#slidesWrap_2").stop().animate({"marginLeft": - ((1134/3) + (1134 * (index))) + "px"},"slow","linear");
+}
+
+function next_2_2(index) {
+    $("#slidesWrap_2").stop().animate({"marginLeft": - ((1134 * (index))-((1134/3)*2)) + "px"},"slow","linear");
+}
+
+$("#next_2").click(function () {
+    if (index < 1) {
+        next_2(index + 1);
+        index++;
+        $("#prev_2").removeClass("hide");
+    } else if (index==1){
+        next_2_1(index);
+        index++;
+        $("#next_2").addClass("hide");
+    }
+})
+
+$("#prev_2").click(function () {
+    if (index==2){
+        next_2_2(index-1)
+        index--;
+        $("#next_2").removeClass("hide");
+    } else if (index == 1) {
+        next_2(index - 1);
+        index--;
+        $("#next_2").removeClass("hide");
+        $("#prev_2").addClass("hide");
+    }
+})
+
 
