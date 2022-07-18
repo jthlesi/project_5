@@ -35,13 +35,13 @@ function next(){
     $(".pageWrap").eq(1).fadeIn("slow");
 }
 
-// var time = setInterval(next, 4000);
+var time = setInterval(next, 4000);
 
-// $("#slides ul").hover(function(){
-//     clearInterval(time);
-// }, function(){
-//     time = setInterval(next, 4000);
-// })
+$("#slides ul").hover(function(){
+    clearInterval(time);
+}, function(){
+    time = setInterval(next, 4000);
+})
 
 $("#prev").on("click", function(){
     prev();
