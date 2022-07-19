@@ -46,6 +46,57 @@
     }
 }
 
+@mixin img{
+    img{
+        width: 100%!important;
+        height: 100%!important;
+        border-radius: 5px;
+        background: {
+            position: center!important;
+            size:cover!important;
+            repeat:no-repeat!important;
+        }
+    }
+}
+
+@mixin slide_a{
+    .title {
+        width:100%;
+        height: 20px;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        cursor: pointer;
+    }
+    .writer {
+        width:100%;
+        height: 20px;
+        font-size: 13px;
+        color: #787878;
+        &:hover{
+            opacity: 0.4;
+        }
+        margin-bottom: 5px;
+        cursor: pointer;
+    }
+    .star {
+        width: 100%;
+        height: 20px;
+        font-size: 13px;
+        i {
+            color: #dc3232;
+        }
+        span{
+            &:nth-of-type(1){
+                color:#dc3232;
+            }
+            &:nth-of-type(2){
+                color:#787878;
+            }
+        }
+    }
+}
+
 p,i,li,span,div {
     font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Helvetica Neue", ridi-roboto, "Noto Sans KR", sans-serif;
 }
@@ -257,11 +308,11 @@ input {
     @include arrow;
 }
 
-#prev {
+#prev, #prev_2, #prev_3, #prev_4{
     left: -20px;
 }
 
-#next {
+#next, #next_2, #next_3, #next_4 {
     right: -20px;
 }
 
@@ -323,23 +374,28 @@ input {
         height: 90px;
         margin: 0px 10px;
     }
-    cursor: pointer;
 }
 
 .iconImg{
     width: 70px;
     height: 70px;
+    cursor: pointer;
     background: {
         position: center!important;
         size:cover!important;
         repeat:no-repeat!important;
     }
-
 }
+
+$colorList : (#0d14bb, #80050c, #8444ec, #04455c, #266090 , #1f3200, #544444);
+
 
 @for $i from 1 through 7 {
     #iconImg_#{$i} {
         background: url(../img/icon_#{$i}.png);
+    }
+    #slide_2_#{$i}>.bookWrap>.backColor {
+        background: nth($colorList, $i);
     }
 }
 
@@ -347,6 +403,7 @@ input {
     font-size: 13px;
     text-align: center;
     padding-top: 5px;
+    cursor: pointer;
 }
 
 #slides_2{
@@ -368,6 +425,7 @@ input {
     border-radius: 5px;
     color :white;
     position: relative;
+    cursor: pointer;
 }
 
 .bookWrap{
@@ -381,7 +439,6 @@ input {
         height: 100px;
         position: absolute;
         top:50px;
-        background: #1e9eff;
         border-radius: 5px;
         .thumb{
             height: 150px;
@@ -414,17 +471,198 @@ input {
 
 #slide_2{
     @include arrow;
-}
-
-#prev_2 {
-    left: -20px;
-}
-
-#next_2 {
-    right: -20px;
+    .wrap>p{
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
 }
 
 .hide{
     display: none!important;
 }
 
+#slide_3{
+    margin-top: 50px;
+    @include arrow;
+    .wrap>p{
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+}
+
+#slides_3{
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    #slidesWrap_3 {
+        width: 200%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        .slide_3 { 
+            width: (1134px / 3);
+            height: (420px / 3);
+            display: flex;
+            position: relative;
+            flex-wrap: wrap;
+            padding: {
+                right : 10px;
+                bottom: 10px;
+            };
+            .cover {
+                width: 80px;
+                height: 100%;
+                cursor: pointer;
+                @include img;
+            }
+            .rank {
+                width: 80px;
+                height: 100%;
+                @include flex;
+            }
+            .textWrap_3{
+                width: calc(100% - 160px);
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                @include slide_a;
+            }
+        }
+    }
+}
+
+#slide_4{
+    margin-top: 50px;
+    @include arrow;
+    .wrap>p{
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+}
+
+#slides_4{
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    #slidesWrap_4 {
+        width: 1000%;
+        height: 100%;
+        .slide_4{
+            float:left;
+            width: (1134px / 6);
+            height: 100%;
+            padding-right: 5px;
+            display: flex;
+            flex-direction: column;
+            .thumb_4{
+                width: 100%;
+                height: 260px;
+                border-radius: 5px;
+                position: relative;
+                @include img;
+            }
+            .title_4{
+                margin-top: 5px;
+                width: 100%;
+                height: 20px;
+                font-size: 16px;
+                font-weight: 700;
+            }
+            .author_4{
+                margin-top: 5px;
+                width: 100%;
+                height: 20px;
+                font-size: 14px;
+                color: #787878;
+            }
+            .star_4{
+                margin-top: 5px;
+                width: 100%;
+                height: 20px;
+                font-size: 13px;
+                color: #787878;
+                span{
+                    &:nth-of-type(1){
+                        color:#dc3232;
+                    }
+                    &:nth-of-type(2){
+                        color:#787878;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.discount{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #dc3232;
+    color: white;
+    border-radius: 0 5px 0 5px;
+    font-size: 11px;
+    @include flex;
+}
+
+#slide_5{
+    margin-top: 50px;
+    @include arrow;
+    .wrap>p{
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+}
+
+#slides_5{
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    #slidesWrap_5 {
+        width: 200%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        .slide_5 { 
+            width: (1134px / 3);
+            height: (420px / 3);
+            display: flex;
+            position: relative;
+            flex-wrap: wrap;
+            padding: {
+                right : 10px;
+                bottom: 10px;
+            };
+            .cover {
+                width: 80px;
+                height: 100%;
+                cursor: pointer;
+                @include img;
+            }
+            .rank {
+                width: 80px;
+                height: 100%;
+                @include flex;
+            }
+            .textWrap_5{
+                width: calc(100% - 160px);
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                @include slide_a;
+            }
+        }
+    }
+}
