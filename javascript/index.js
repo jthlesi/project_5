@@ -14,6 +14,9 @@ $(document).ready(function(){
     $("#prev_2").addClass("hide");
     $("#prev_3").addClass("hide");
     $("#prev_4").addClass("hide");
+    $("#prev_5").addClass("hide");
+    $("#prev_6").addClass("hide");
+    $("#prev_7").addClass("hide");
 })
 
 function prev() {
@@ -55,7 +58,7 @@ $("#next").on("click", function(){
 })
 
 for(i=1; i<11; i++){
-    $("#slide_"+i).css("background","url(img/banner_"+i+".webp)")
+    $("#slide_1_"+i).css("background","url(img/banner_"+i+".webp)")
 }
 
 $.ajax({
@@ -231,3 +234,180 @@ $("#prev_4").click(function () {
     }
 });
 
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "고전", size: 18},
+    headers: { Authorization: "KakaoAK ddf7da74924187d0c803e6910e6b67bc" }
+})
+
+    .done(function (msg) {
+        for (var i=0;i<19;i++){
+        $(".slide_5 .cover").eq(i).append("<img src="+msg.documents[i].thumbnail+">");
+        $(".textWrap_5 .title").eq(i).append("<p>"+msg.documents[i].title.substring(0,10)+"</p>");
+        $(".textWrap_5 .writer").eq(i).append("<p>"+msg.documents[i].authors.slice(0,2)+"</p>");
+        $(".slide_5 .rank").eq(i).append("<p>"+(i+1)+"</p>");
+        var title=msg.documents[i].title;
+        var author=msg.documents[i].authors;
+        if(title.length>10){
+            $(".textWrap_5 .title p").eq(i).append("...");
+        }
+        if(author.length>3) {
+            $(".textWrap_5 .writer p").eq(i).append(" 외");
+        }
+        }
+    });
+
+var index_5 =0;
+
+function slide_5(index_5){
+    $("#slidesWrap_5").stop().animate({"marginLeft": - 1134 * (index_5) + "px"},"slow","linear");
+};
+
+$("#next_5").click(function () {
+    if (index_5==0) {
+        slide_5(index_5 + 1);
+        index_5++;
+        $("#prev_5").removeClass("hide");
+        $("#next_5").addClass("hide");
+    }
+});
+
+$("#prev_5").click(function () {
+    if (index_5==1){
+        slide_5(index_5-1)
+        index_5--;
+        $("#next_5").removeClass("hide");
+        $("#prev_5").addClass("hide");
+    }
+});
+    
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "선택", size: 20},
+    headers: { Authorization: "KakaoAK ddf7da74924187d0c803e6910e6b67bc" }
+})
+
+    .done(function (msg) {
+        for (var i=0;i<21;i++){
+        $(".thumb_6").eq(i).append("<img src="+msg.documents[i].thumbnail+">");
+        $(".title_6").eq(i).append("<p>"+msg.documents[i].title.substring(0,12)+"</p>");
+        $(".author_6").eq(i).append("<p>"+msg.documents[i].authors.slice(0,2)+"</p>");
+        var title=msg.documents[i].title;
+        var author=msg.documents[i].authors;
+        if(title.length>10){
+            $(".title_6 p").eq(i).append("...");
+        }
+        if(author.length>3) {
+            $(".author_6 p").eq(i).append(" 외");
+        }
+        }
+    });
+
+var index_6 =0;
+var slideWidth_6 = document.querySelector(".slide_6").offsetWidth
+var slideNum_6 =5;
+var last_6=0
+
+function slide_6(index_6){
+    $("#slidesWrap_6").stop().animate({"marginLeft": - ((slideWidth_6 * slideNum_6)+(slideWidth*last_6)) * (index_6)  + "px"},"slow","linear");
+};
+
+$("#next_6").click(function () {
+    if(index_6==2){
+        $("#next_6").addClass("hide");
+        last_6= 2;
+        slide_6(index_6);
+        index_6++;
+        last_6=0;
+    } else if (index_6>=0) {
+        slide_6(index_6 + 1);
+        index_6++;
+        $("#prev_6").removeClass("hide");
+    } 
+});
+
+$("#prev_6").click(function () {
+    if(index_6==1){   
+        slide_6(index_6-1);
+        index_6--;     
+        $("#prev_6").addClass("hide");
+    } else if(index_6<3){
+        slide_6(index_6-1);
+        index_6--;
+    } else if (index_6==3){
+        last_6=4;
+        slide_6(index_6-2);
+        index_6--;
+        last_6=0;
+        $("#next_6").removeClass("hide");
+    }
+});
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "자기", size: 20},
+    headers: { Authorization: "KakaoAK ddf7da74924187d0c803e6910e6b67bc" }
+})
+
+    .done(function (msg) {
+        for (var i=0;i<21;i++){
+            $(".thumb_7").eq(i).append("<img src="+msg.documents[i].thumbnail+">");
+            $(".title_7").eq(i).append("<p>"+msg.documents[i].title.substring(0,12)+"</p>");
+            $(".author_7").eq(i).append("<p>"+msg.documents[i].authors.slice(0,2)+"</p>");
+            var title=msg.documents[i].title;
+            var author=msg.documents[i].authors;
+            if(title.length>10){
+                $(".title_7 p").eq(i).append("...");
+            }
+            if(author.length>3) {
+                $(".author_7 p").eq(i).append(" 외");
+            }
+        }
+    });
+
+var index_7 =0;
+var slideWidth_7 = document.querySelector(".slide_7").offsetWidth
+var slideNum_7 =5;
+var last_7=0
+
+function slide_7(index_7){
+    $("#slidesWrap_7").stop().animate({"marginLeft": - ((slideWidth_7 * slideNum_7)+(slideWidth*last_7)) * (index_7)  + "px"},"slow","linear");
+};
+
+$("#next_7").click(function () {
+    if(index_7==2){
+        $("#next_7").addClass("hide");
+        last_7= 2;
+        slide_7(index_7);
+        index_7++;
+        last_7=0;
+    } else if (index_7>=0) {
+        slide_7(index_7 + 1);
+        index_7++;
+        $("#prev_7").removeClass("hide");
+    } 
+});
+
+$("#prev_7").click(function () {
+    if(index_7==1){   
+        slide_7(index_7-1);
+        index_7--;     
+        $("#prev_7").addClass("hide");
+    } else if(index_7<3){
+        slide_7(index_7-1);
+        index_7--;
+    } else if (index_7==3){
+        last_7=4;
+        slide_7(index_7-2);
+        index_7--;
+        last_7=0;
+        $("#next_7").removeClass("hide");
+    }
+});
+
+$("#top").click(function(){
+   window.scrollTo(0,0);
+});
