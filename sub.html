@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도서추천 - 리디</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/sub.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div id="topBar">
+            <div class="wrap">
+                <ul id="genre" >
+                    <li>웹툰/만화</li>
+                    <li>웹소설</li>
+                    <li>도서</li>
+                    <li>셀렉트<i class="fa-solid fa-chevron-right"></i></li>
+                </ul>
+                <ul id="info">
+                    <li>회원가입</li>
+                    <li>로그인</li>
+                </ul>
+            </div>
+        </div>
+        <div id ="topImg">
+            <div class="wrap">
+                <div id="logo"><img src="img/logo_lidi.svg"></div>
+                <div id="search"><i class="fa-solid fa-magnifying-glass"></i><input type="text"></div>
+                <div id="icon">
+                    <i class="fa-solid fa-bell fa-fw"></i>
+                    <i class="fa-solid fa-cart-shopping fa-fw"></i>
+                    <i class="fa-solid fa-book fa-fw"></i>
+                    <i class="fa-solid fa-user fa-fw"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="main">
+        <div class="subWrap">
+            <div id="detailWrap">
+                <section id="detail_top">
+                    <div id="book_cover">
+                        <div id="cover_img"></div>
+                        <div id="cover_review"><i class="fa-solid fa-book-open"></i>미리보기</div>
+                    </div>
+                    <div id="info_book_wrap">
+                        <div id="info_category">소설<i class="fa-solid fa-chevron-right"></i> 한국소설 </div>
+                        <div id="info_title"></div>
+                        <div id="info_star_rate">
+                            <div id="star_cover">
+                                <div id="star_wrap">
+                                    <div id="full"></div>
+                                </div>
+                            </div>
+                            <span>4.7점</span><span>(1,754명)</span>
+                        </div>
+                        <div id="info_author">
+                            <span>저</span>
+                        </div>
+                        <div id="info_publisher">
+                            <span>출판</span>
+                        </div>
+                        <div id="info_event"></div>
+                        <div id="info_price"></div>
+                        <div id="info_btn"></div>
+                    </div>
+                    <div id="info_meta"></div>
+                </section>
+            </div>
+            <div id="rightSide">
+                <div id="img">
+                    <h2>7월 리디셀렉트</h2>
+                    <h2>업데이트</h2>
+                    <div id="sideBtn">자세히보기<i class="fa-solid fa-chevron-right"></i></div>
+                    <div id="sideCover"></div>
+                </div>
+                <div id="bestRank">
+                    <h3>추리/미스터리/스릴러 베스트셀러</h3>
+                    <ul>
+                        <li><span></span><span></span></li>
+                        <li><span></span><span></span></li>
+                        <li><span></span><span></span></li>
+                        <li><span></span><span></span></li>
+                        <li><span></span><span></span></li>
+                        <li><span></span><span></span></li>
+                        <li><span></span><span></span></li>
+                        <li><span></span><span></span></li>
+                        <li><span></span><span></span></li>
+                        <li><span></span><span></span></li>
+                    </ul>
+                    <div id="sideMoreBtn">더보기<i class="fa-solid fa-caret-right"></i></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="javascript/sub.js"></script>
+</body>
+</html>

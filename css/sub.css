@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+@font-face {
+  font-family: "RIDIBatang";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+p, i, li, span, div {
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Helvetica Neue", ridi-roboto, "Noto Sans KR", sans-serif;
+}
+
+.wrap {
+  width: 1134px;
+  margin: 0 auto;
+}
+
+#topBar {
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #f0f0f0;
+}
+#topBar .wrap {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+#topBar .wrap ul {
+  display: flex;
+  align-items: center;
+}
+
+#genre li {
+  float: left;
+  font-size: 14px;
+  color: rgb(120, 120, 120);
+  font-weight: 700;
+  cursor: pointer;
+}
+#genre li:not(:last-of-type)::after {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #e6e6e6;
+  display: inline-block;
+  margin: 3px 8px;
+}
+#genre li:hover {
+  opacity: 0.4;
+}
+
+.fa-chevron-right {
+  font-size: 0.8em;
+}
+
+#info li {
+  float: left;
+  font-size: 14px;
+  color: rgb(120, 120, 120);
+  font-weight: 700;
+  cursor: pointer;
+}
+#info li:hover {
+  opacity: 0.4;
+}
+#info li:not(:last-of-type)::after {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #e6e6e6;
+  display: inline-block;
+  margin: 3px 8px;
+}
+
+#topImg {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+#topImg .wrap {
+  display: flex;
+}
+
+#logo {
+  width: calc(100% - 260px - 180px - 10px);
+  align-self: center;
+}
+#logo img {
+  width: auto;
+  height: 23px;
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+#search {
+  width: 260px;
+  height: 40px;
+  margin-right: 10px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#search i {
+  font-size: 16px;
+  color: #787878;
+  margin-right: 10px;
+}
+
+input {
+  width: 210px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+}
+input:focus {
+  outline: none;
+}
+
+#icon {
+  width: 180px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+#main {
+  width: 100%;
+  height: auto;
+}
+#main .subWrap {
+  width: 1016px;
+  margin: 0 auto;
+  height: 10000px;
+  display: flex;
+}
+#main .subWrap #detailWrap {
+  width: 810px;
+  height: 100%;
+  border-right: 1px solid #ddd;
+}
+#main .subWrap #detailWrap #detail_top {
+  width: 100%;
+  height: 1000px;
+  padding: 30px 20px;
+  display: flex;
+}
+#main .subWrap #detailWrap #detail_top #book_cover {
+  width: 200px;
+  height: 350px;
+  margin-right: 40px;
+}
+#main .subWrap #detailWrap #detail_top #book_cover #cover_img {
+  width: 200px;
+  height: 300px;
+  cursor: zoom-in;
+  border: 1px solid #ddd;
+}
+#main .subWrap #detailWrap #detail_top #book_cover #cover_img img {
+  width: 100%;
+  height: 100%;
+}
+#main .subWrap #detailWrap #detail_top #book_cover #cover_review {
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 40px;
+  border: 1px solid #1e9eff;
+  border-radius: 5px;
+  color: #1e9eff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#main .subWrap #detailWrap #detail_top #book_cover #cover_review i {
+  font-size: 11px;
+  margin-right: 5px;
+}
+#main .subWrap #detailWrap #detail_top #book_cover #cover_review:hover {
+  background-color: rgba(30, 158, 255, 0.2);
+}
+#main .subWrap #detailWrap #detail_top #info_book_wrap {
+  width: calc(100% - 240px);
+  height: 500px;
+}
+#main .subWrap #detailWrap #detail_top #info_book_wrap #info_category {
+  font-size: 13px;
+  cursor: pointer;
+}
+#main .subWrap #detailWrap #detail_top #info_book_wrap #info_category i {
+  cursor: context-menu;
+  margin: 0px 3px;
+}
+#main .subWrap #detailWrap #detail_top #info_book_wrap #info_category:hover {
+  color: #1e9eff;
+}
+#main .subWrap #detailWrap #detail_top #info_book_wrap #info_category:hover i {
+  color: black;
+}
+#main .subWrap #detailWrap #detail_top #info_book_wrap #info_title {
+  font-size: 30px;
+  font-weight: 700;
+}
+#main .subWrap #detailWrap #detail_top #info_book_wrap #info_star_rate {
+  margin: 20px 0 15px 0;
+  cursor: pointer;
+}
+#main .subWrap #detailWrap #detail_top #info_book_wrap #info_star_rate #star_cover {
+  width: 85px;
+  height: 17px;
+  background: url(../img/sub/star.svg);
+  display: inline-block;
+}
+#main .subWrap #detailWrap #detail_top #info_book_wrap #info_star_rate #star_cover #star_wrap {
+  overflow: hidden;
+  width: 93%;
+  height: 17px;
+}
+#main .subWrap #detailWrap #detail_top #info_book_wrap #info_star_rate #star_cover #star_wrap #full {
+  width: 85px;
+  height: 17px;
+  background: url(../img/sub/star_full.svg);
+}
+#main .subWrap #detailWrap #detail_top #info_book_wrap #info_star_rate span:nth-of-type(1) {
+  color: #fa722e;
+  font-size: 14px;
+}
+#main .subWrap #detailWrap #detail_top #info_book_wrap #info_star_rate span:nth-of-type(2) {
+  font-size: 11px;
+  color: #666666;
+}
+#main .subWrap #detailWrap #detail_top #info_book_wrap #info_author {
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+#main .subWrap #detailWrap #detail_top #info_book_wrap #info_author span:first-of-type {
+  font-weight: 700;
+  cursor: pointer;
+}
+#main .subWrap #detailWrap #detail_top #info_book_wrap #info_author span:first-of-type:hover {
+  color: #1e9eff;
+}
+#main .subWrap #detailWrap #detail_top #info_book_wrap #info_publisher {
+  font-size: 13px;
+}
+#main .subWrap #detailWrap #detail_top #info_book_wrap #info_publisher span:first-of-type {
+  font-weight: 700;
+  cursor: pointer;
+}
+#main .subWrap #detailWrap #detail_top #info_book_wrap #info_publisher span:first-of-type:hover {
+  color: #1e9eff;
+}
+#main .subWrap #rightSide {
+  width: 206px;
+  height: 1000px;
+}
+#main .subWrap #rightSide #img {
+  height: 206px;
+  padding-top: 20px;
+  background: #f0f0f0;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+}
+#main .subWrap #rightSide #img h2 {
+  font-size: 20px;
+  text-align: center;
+}
+#main .subWrap #rightSide #img h2:last-of-type {
+  color: #1e9eff;
+}
+#main .subWrap #rightSide #img #sideBtn {
+  width: 100px;
+  height: 25px;
+  margin: 8px auto;
+  background: black;
+  font-size: 11px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+#main .subWrap #rightSide #img #sideCover {
+  width: 100px;
+  height: 87px;
+  margin: 0 auto;
+}
+#main .subWrap #rightSide #img #sideCover img {
+  width: 100% !important;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+#main .subWrap #rightSide #bestRank {
+  padding: 20px;
+  color: #666666;
+}
+#main .subWrap #rightSide #bestRank h3 {
+  font-size: 13px;
+}
+#main .subWrap #rightSide #bestRank span {
+  display: table-cell;
+  font-size: 12px;
+  padding: 5px 0;
+}
+#main .subWrap #rightSide #bestRank span:first-of-type {
+  width: 28px;
+  color: #dc3232;
+}
+#main .subWrap #rightSide #bestRank span:last-of-type:hover {
+  width: calc(100% - 28px);
+  color: #1e9eff;
+}
+#main .subWrap #rightSide #bestRank ul li {
+  border-top: 1px solid #ddd;
+  margin: 5px 0;
+  cursor: pointer;
+}
+#main .subWrap #rightSide #bestRank #sideMoreBtn {
+  font-size: 12px;
+  width: 100%;
+  height: 25px;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
