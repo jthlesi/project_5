@@ -127,7 +127,31 @@ $.ajax({
 })
 
     .done(function (msg) {
-        for (var i=0;i<19;i++){
+        for (var i=0;i<16;i++){
+        $(".cover").eq(i).append("<img src="+msg.documents[i].thumbnail+">");
+        $(".title").eq(i).append("<p>"+msg.documents[i].title.substring(0,10)+"</p>");
+        $(".writer").eq(i).append("<p>"+msg.documents[i].authors.slice(0,2)+"</p>");
+        $(".rank").eq(i).append("<p>"+(i+1)+"</p>");
+        var title=msg.documents[i].title;
+        var author=msg.documents[i].authors;
+        if(title.length>10){
+            $(".title p").eq(i).append("...");
+        }
+        if(author.length>3) {
+            $(".writer p").eq(i).append(" 외");
+        }
+        }
+    });
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "계발", size: 18},
+    headers: { Authorization: "KakaoAK ddf7da74924187d0c803e6910e6b67bc" }
+})
+
+    .done(function (msg) {
+        for (var i=16;i<19;i++){
         $(".cover").eq(i).append("<img src="+msg.documents[i].thumbnail+">");
         $(".title").eq(i).append("<p>"+msg.documents[i].title.substring(0,10)+"</p>");
         $(".writer").eq(i).append("<p>"+msg.documents[i].authors.slice(0,2)+"</p>");
