@@ -62,11 +62,16 @@ $(document).ready(function(){
     $.get("txt/publish_coment.txt", function (data) {
         $("#publish_coment").html(data);
     })
+    $.get("txt/author.txt", function (data) {
+        $("#intro_author").html(data);
+    })
+    $.get("txt/content.txt", function (data) {
+        $("#book_content").html(data);
+    })
 })
 
 $(".open").click(function(){
     var openIdx = $(".open").index(this);
-    console.log(openIdx)
     $(".toggle").eq(openIdx).stop().slideDown("fast");
     $(this).removeClass("on");
     $(".close").eq(openIdx).addClass("on");
@@ -81,7 +86,6 @@ $(".close").click(function(){
 
 $(".open_div").click(function(){
     var divIdx = $(".open_div").index(this);
-    console.log(divIdx)
     if($(".open").eq(divIdx).hasClass("on")){
         $(".toggle").eq(divIdx).stop().slideDown("fast");
         $(".open").eq(divIdx).removeClass("on");
@@ -92,3 +96,29 @@ $(".open_div").click(function(){
         $(".open").eq(divIdx).addClass("on");
     }
 });
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "김호연", size: 5},
+    headers: { Authorization: "KakaoAK ddf7da74924187d0c803e6910e6b67bc" }
+})
+
+    .done(function (msg) {
+        for (var i=0;i<6;i++){
+        $(".other_cover").eq(i).append("<img src="+msg.documents[i].thumbnail+">");
+        $(".other_title").eq(i).text(msg.documents[i].title.substring(0,7));
+        }
+    });
+
+$("#star_selec span").on("mouseenter", function(){
+    var starIdx = $("#star_selec span").index(this);
+    $(this).prevUntil().addBack().html("★").css({"color":"#f37121"});
+    $("#star_text_0").hide();
+    $("#star_text_"+(starIdx+1)).prevAll().hide();
+    $("#star_text_"+(starIdx+1)).show();
+}).on("mouseout", function(){
+    $("#star_selec span").html("☆").css({"color":"#999999"})
+    $("#star_text_0").show();
+    $(".star_text").hide()
+})

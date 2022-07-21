@@ -5,7 +5,7 @@
   font-weight: normal;
   font-style: normal;
 }
-p, i, li, span, div, td, section {
+p, i, li, span, div, td, section, textarea {
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Helvetica Neue", ridi-roboto, "Noto Sans KR", sans-serif;
 }
 
@@ -419,39 +419,41 @@ section {
   float: left;
   margin-right: 9px;
 }
-#main .subWrap #detailWrap #introduce, #main .subWrap #detailWrap #publish_coment {
+#main .subWrap #detailWrap #introduce, #main .subWrap #detailWrap #publish_coment, #main .subWrap #detailWrap #book_content {
   width: 100%;
   height: auto;
   margin-top: 60px;
   padding-bottom: 20px;
 }
-#main .subWrap #detailWrap #introduce:hover, #main .subWrap #detailWrap #publish_coment:hover {
+#main .subWrap #detailWrap #introduce:hover, #main .subWrap #detailWrap #publish_coment:hover, #main .subWrap #detailWrap #book_content:hover {
   cursor: pointer;
 }
-#main .subWrap #detailWrap #introduce h3, #main .subWrap #detailWrap #publish_coment h3 {
+#main .subWrap #detailWrap #introduce h3, #main .subWrap #detailWrap #publish_coment h3, #main .subWrap #detailWrap #book_content h3 {
   font-size: 20px;
   color: #59667a;
 }
-#main .subWrap #detailWrap #introduce h3:hover, #main .subWrap #detailWrap #publish_coment h3:hover {
+#main .subWrap #detailWrap #introduce h3:hover, #main .subWrap #detailWrap #publish_coment h3:hover, #main .subWrap #detailWrap #book_content h3:hover {
   cursor: context-menu;
 }
-#main .subWrap #detailWrap #introduce hr, #main .subWrap #detailWrap #publish_coment hr {
+#main .subWrap #detailWrap #introduce hr, #main .subWrap #detailWrap #publish_coment hr, #main .subWrap #detailWrap #book_content hr {
   margin: 12px 0;
   height: 3px;
   background: #59667a;
 }
-#main .subWrap #detailWrap #introduce hr:hover, #main .subWrap #detailWrap #publish_coment hr:hover {
+#main .subWrap #detailWrap #introduce hr:hover, #main .subWrap #detailWrap #publish_coment hr:hover, #main .subWrap #detailWrap #book_content hr:hover {
   cursor: context-menu;
 }
-#main .subWrap #detailWrap #introduce p, #main .subWrap #detailWrap #publish_coment p {
+#main .subWrap #detailWrap #introduce p, #main .subWrap #detailWrap #publish_coment p, #main .subWrap #detailWrap #book_content p {
   font-size: 14px;
   color: #333333;
 }
-#main .subWrap #detailWrap #introduce .toggle, #main .subWrap #detailWrap #publish_coment .toggle {
+#main .subWrap #detailWrap #introduce .toggle, #main .subWrap #detailWrap #publish_coment .toggle, #main .subWrap #detailWrap #book_content .toggle {
   display: none;
 }
 #main .subWrap #detailWrap #profile {
   margin-top: 60px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
 }
 #main .subWrap #detailWrap #profile h3 {
   font-size: 20px;
@@ -470,11 +472,334 @@ section {
 #main .subWrap #detailWrap #profile h4:hover {
   color: #1e9eff;
 }
-#main .subWrap #detailWrap #profile div {
-  width: 100px;
+#main .subWrap #detailWrap #profile #profile_btn {
+  width: 170px;
   height: 30px;
+  color: #1e9eff;
+  font-size: 13px;
+  border: 1px solid #1e9eff;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 13px;
+  cursor: pointer;
+}
+#main .subWrap #detailWrap #profile #profile_btn:hover {
+  background: rgba(30, 158, 255, 0.1);
+}
+#main .subWrap #detailWrap #profile #profile_btn span::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  display: inline-block;
   background: #1e9eff;
+  margin: 3px 3px;
+}
+#main .subWrap #detailWrap #profile ul li {
+  margin-bottom: 5px;
+}
+#main .subWrap #detailWrap #profile ul li span {
+  font-size: 14px;
+  display: table-cell;
+  padding-right: 10px;
+}
+#main .subWrap #detailWrap #profile ul li span:first-of-type {
+  color: #808991;
+}
+#main .subWrap #detailWrap #profile ul li span:last-of-type {
+  color: #333333;
+}
+#main .subWrap #detailWrap #profile div:last-of-type {
+  display: flex;
+  justify-content: flex-end;
+}
+#main .subWrap #detailWrap #profile div:last-of-type span {
+  font-size: 13px;
+  color: #9ea7ad;
+  margin-right: 10px;
+}
+#main .subWrap #detailWrap #profile div:last-of-type #profile_btn_2 {
+  width: 135px;
+  height: 22px;
+  color: #808991;
+  border: 1px solid #f0f0f0;
+  font-size: 11px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+#main .subWrap #detailWrap #profile div:last-of-type #profile_btn_2 i {
+  font-size: 6px;
+  padding-top: 3px;
+  margin-right: 4px;
+}
+#main .subWrap #detailWrap #profile div:last-of-type #profile_btn_2:hover {
+  background: rgba(128, 137, 145, 0.1);
+}
+#main .subWrap #detailWrap #other_book {
+  padding: 30px;
+}
+#main .subWrap #detailWrap #other_book #rep p {
+  font-size: 16px;
+  color: #333333;
+}
+#main .subWrap #detailWrap #other_book #rep:first-of-type {
+  display: flex;
+  justify-content: space-between;
+}
+#main .subWrap #detailWrap #other_book #rep ul li {
+  float: left;
+  font-size: 11px;
+  color: #999999;
+  cursor: pointer;
+}
+#main .subWrap #detailWrap #other_book #rep ul li:first-of-type {
+  color: #333333;
+}
+#main .subWrap #detailWrap #other_book #rep ul li:hover {
+  color: #333333;
+}
+#main .subWrap #detailWrap #other_book #rep ul li:not(:last-of-type)::after {
+  content: "";
+  width: 1px;
+  height: 11px;
+  display: inline-block;
+  background: #ddd;
+  margin: 0px 8px;
+}
+#main .subWrap #detailWrap #other_book #other {
+  margin: 30px 0;
+  width: 100%;
+  height: 180px;
+  display: flex;
+  justify-content: space-around;
+}
+#main .subWrap #detailWrap #other_book #other .other_wrap {
+  width: 135px;
+  height: 183px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#main .subWrap #detailWrap #other_book #other .other_wrap .other_cover {
+  width: 90px;
+  height: 135px;
+}
+#main .subWrap #detailWrap #other_book #other .other_wrap .other_cover img {
+  width: 100%;
+  height: 100%;
+}
+#main .subWrap #detailWrap #other_book #other .other_wrap .other_title {
+  width: 90px;
+  font-size: 13px;
+  color: #333333;
+  margin-top: 5px;
+}
+#main .subWrap #detailWrap #other_book #other .other_wrap .other_star {
+  width: 90px;
+  height: 24px;
+}
+#main .subWrap #detailWrap #other_book #other .other_wrap .other_star .star_cover {
+  width: 50px;
+  height: 10px;
+  background: url(../img/sub/star.svg) no-repeat;
+  display: inline-block;
+}
+#main .subWrap #detailWrap #other_book #other .other_wrap .other_star .star_cover .star_wrap {
+  overflow: hidden;
+  height: 10px;
+}
+#main .subWrap #detailWrap #other_book #other .other_wrap .other_star .star_cover .star_wrap .full {
+  width: 50px;
+  height: 10px;
+  background: url(../img/sub/star_full.svg) no-repeat;
+}
+#main .subWrap #detailWrap #other_book #other .other_wrap .other_star .star_cover #star_wrap_1 {
+  width: 94%;
+}
+#main .subWrap #detailWrap #other_book #other .other_wrap .other_star .star_cover #star_wrap_2 {
+  width: 90%;
+}
+#main .subWrap #detailWrap #other_book #other .other_wrap .other_star .star_cover #star_wrap_3 {
+  width: 87%;
+}
+#main .subWrap #detailWrap #other_book #other .other_wrap .other_star .star_cover #star_wrap_4 {
+  width: 92%;
+}
+#main .subWrap #detailWrap #other_book #other .other_wrap .other_star .star_cover #star_wrap_5 {
+  width: 70%;
+}
+#main .subWrap #detailWrap #other_book #other .other_wrap .other_star span {
+  font-size: 10px;
+  color: #666666;
+}
+#main .subWrap #detailWrap #intro_author {
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+  padding-bottom: 20px;
+}
+#main .subWrap #detailWrap #intro_author h3 {
+  font-size: 20px;
+  color: #59667a;
+}
+#main .subWrap #detailWrap #intro_author hr {
+  margin: 12px 0;
+  height: 3px;
+  background: #59667a;
+}
+#main .subWrap #detailWrap #intro_author p {
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 10px;
+}
+#main .subWrap #detailWrap #review {
+  margin-top: 60px;
+}
+#main .subWrap #detailWrap #review h3 {
+  font-size: 20px;
+  color: #59667a;
+}
+#main .subWrap #detailWrap #review hr {
+  margin: 12px 0;
+  height: 3px;
+  background: #59667a;
+}
+#main .subWrap #detailWrap #review #review_box {
+  display: flex;
+}
+#main .subWrap #detailWrap #review #review_box #box_left {
+  width: 120px;
+  padding: 20px 10px;
+}
+#main .subWrap #detailWrap #review #review_box #box_left p {
+  text-align: center;
+}
+#main .subWrap #detailWrap #review #review_box #box_left p:first-child {
+  color: #808991;
+  font-size: 12px;
+}
+#main .subWrap #detailWrap #review #review_box #box_left p:nth-child(2) {
+  font-size: 35px;
+  font-weight: 700;
+}
+#main .subWrap #detailWrap #review #review_box #box_left p:last-child {
+  border-top: 1px solid #ddd;
+  padding-top: 5px;
+  font-size: 12px;
+  color: #94a2bb;
+}
+#main .subWrap #detailWrap #review #review_box #box_left #review_star {
+  width: 75px;
+  height: 15px;
+  margin: 0 auto;
+}
+#main .subWrap #detailWrap #review #review_box #box_left #review_star .star_cover {
+  width: 75px;
+  height: 15px;
+  background: url(../img/sub/star.svg) no-repeat;
+  display: inline-block;
+}
+#main .subWrap #detailWrap #review #review_box #box_left #review_star .star_cover .star_wrap {
+  width: 92%;
+  overflow: hidden;
+  height: 15px;
+}
+#main .subWrap #detailWrap #review #review_box #box_left #review_star .star_cover .star_wrap .full {
+  width: 75px;
+  height: 15px;
+  background: url(../img/sub/star_full.svg) no-repeat;
+}
+#main .subWrap #detailWrap #review #review_box #box_left #static {
+  margin-top: 15px;
+  color: #808991;
+  font-size: 12px;
+}
+#main .subWrap #detailWrap #review #review_box #box_left #static li {
+  margin: 5px 0;
+}
+#main .subWrap #detailWrap #review #review_box #box_left #static .bar_wrap {
+  display: inline-block;
+  width: 70px;
+  height: 10px;
+  margin-left: 2px;
+  background: #e8edf3;
+}
+#main .subWrap #detailWrap #review #review_box #box_left #static .bar_wrap .bar {
+  height: 10px;
+  background: linear-gradient(#9daab5, #718392);
+}
+#main .subWrap #detailWrap #review #review_box #box_left #static .bar_wrap #bar_5 {
+  width: 80%;
+}
+#main .subWrap #detailWrap #review #review_box #box_left #static .bar_wrap #bar_4 {
+  width: 15%;
+}
+#main .subWrap #detailWrap #review #review_box #box_left #static .bar_wrap #bar_3 {
+  width: 5%;
+}
+#main .subWrap #detailWrap #review #review_box #box_left #static .bar_wrap #bar_2 {
+  width: 0%;
+}
+#main .subWrap #detailWrap #review #review_box #box_left #static .bar_wrap #bar_1 {
+  width: 0%;
+}
+#main .subWrap #detailWrap #review #review_box #box_right {
+  width: calc(100% - 120px);
+  padding: 20px 10px;
+}
+#main .subWrap #detailWrap #review #review_box #box_right #star_text_0 {
+  width: 200px;
+  height: 35px;
+  color: #666666;
+  font-size: 18px;
+  margin: 0 auto;
+  text-align: center;
+}
+#main .subWrap #detailWrap #review #review_box #box_right .star_text {
+  display: none;
+  width: 150px;
+  height: 35px;
+  border-radius: 5px;
+  background: #1e9eff;
+  font-size: 14px;
   color: white;
+  margin: 0 auto;
+}
+#main .subWrap #detailWrap #review #review_box #box_right .star_text i {
+  color: #1e9eff;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#main .subWrap #detailWrap #review #review_box #box_right .star_text div {
+  text-align: center;
+  padding-top: 5px;
+}
+#main .subWrap #detailWrap #review #review_box #box_right #star_selec {
+  font-size: 45px;
+  color: #999999;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+#main .subWrap #detailWrap #review #review_box #box_right #star_selec span {
+  padding: 0 7px;
+}
+#main .subWrap #detailWrap #review #review_box #box_right textarea {
+  margin-top: 7px;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 14px;
+  color: #666666;
+  resize: none;
+  border: 1px solid #666666;
+  border-radius: 5px;
 }
 #main .subWrap #rightSide {
   width: 206px;
