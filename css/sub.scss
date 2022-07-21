@@ -45,7 +45,7 @@ $border : #f0f0f0;
 
 $border_2 : #ddd;
 
-p,i,li,span,div {
+p,i,li,span,div,td,section {
     font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Helvetica Neue", ridi-roboto, "Noto Sans KR", sans-serif;
 }
 
@@ -156,6 +156,9 @@ input {
     @include flex;
     font-size: 28px;
 }
+section {
+    position: relative;
+}
 
 #main{
     width: 100%;
@@ -168,12 +171,13 @@ input {
         #detailWrap{
             width: 810px;
             height: 100%;
+            padding: 30px 30px;
             border-right: 1px solid $border_2;
             #detail_top{
                 width: 100%;
-                height: 1000px;
-                padding: 30px 20px;
+                height: 600px;
                 display: flex;
+                flex-wrap: wrap;
                 #book_cover{
                     width: 200px;
                     height: 350px;
@@ -210,7 +214,7 @@ input {
                 }
                 #info_book_wrap{
                     width: calc(100% - 240px);
-                    height: 500px;
+                    height: 400px;
                     #info {
                         &_category{
                             font-size: 13px;
@@ -265,9 +269,235 @@ input {
                         &_publisher{
                             @include author;
                         }
+                        &_event{
+                            margin: {
+                                top: 17px;
+                                bottom: 15px;
+                            }
+                            padding: 7px 0;
+                            border: {
+                                top:1px solid $border_2;
+                                bottom:1px solid $border_2;
+                            }
+                            display: flex;
+                            div{
+                                width: 40px;
+                                height: 20px;
+                                font-size: 12px;
+                                background: #22b8cf;
+                                color: white;
+                                border-radius: 3px;
+                                @include flex;
+                                margin-right: 10px;
+                            }
+                            p{
+                                width: calc(100% - 70px);
+                                cursor: pointer;
+                                font-size: 14px;
+                                color:$gray;
+                                &:hover{
+                                    color: $blue;
+                                }
+                            }
+                            span{
+                                cursor: pointer;
+                                font-size: 12px;
+                                color:$gray;
+                            }
+
+                        }
+                        &_price{
+                            table{
+                                width: 100%;
+                                font-size: 13px;
+                                border-collapse: collapse;
+                                border: {
+                                    top:1px solid $border_2 ;
+                                    bottom: 1px solid $border_2 ;
+                                }
+                                tr {
+                                    #rowspan {
+                                        width: 30%;
+                                        background: #f7fafc;
+                                        border-right: 1px solid $border_2;
+                                        text-align: center;
+                                        color: #40474d;
+                                    }
+                                    td {
+                                        padding: 7px;
+                                        color : #808991;
+                                        &:last-of-type {
+                                            text-align: right;
+                                            font-weight: 700;
+                                        }
+                                    }
+                                    &:last-of-type {
+                                        td:last-of-type {
+                                            color: $blue;
+                                        }
+                                    }
+                                }
+
+                            }
+
+
+                        }
+                        &_btn{
+                            margin-top: 15px;
+                            display: flex;
+                            justify-content: flex-end;
+                            cursor: pointer;
+                            #btn_1, #btn_2, #btn_3  {
+                                width: 50px;
+                                height: 50px;
+                                margin-left: 5px;
+                                border: 1px solid $border_2;
+                                border-radius: 5px;
+                                @include flex;
+                                color: #808991;
+                                &:hover {
+                                    background: rgba(128, 137, 145, 0.2);
+                                }
+                            }
+                            #btn_4 {
+                                width: 120px;
+                                height : 50px;                                
+                                margin-left: 5px;
+                                border: 1px solid $border_2;
+                                border-radius: 5px;
+                                @include flex;
+                                background: $blue;
+                                color: white;
+                                &:hover {
+                                    background: #0077d9;
+                                }
+                            }
+                        }
+                    }
+                }
+                #info_meta {
+                    margin-top: 50px;
+                    width: 100%;
+                    height: 120px;
+                    border: 4px solid $border;
+                    padding: 10px 20px;
+                    font-size: 12px;
+                    display: flex;
+                    #ul_left{
+                        width: 40%;
+                        li {
+                            display: flex;
+                        }
+                        span {
+                            width: 60px;
+                            color: #525a61;
+                            font-weight: 700;
+                            margin-right: 5px;
+                        }
+                        ul{
+                            margin-bottom: 7px;
+                            li {
+                                color: #666666;
+                            }
+                        }
+                        #second li{
+                            float: left;
+                            &:not(:last-of-type)::after {
+                                content: "";
+                                width: 1px;
+                                height: 10px;
+                                background: $border;
+                                margin: 4px 7px;
+                            }
+
+                        }
+                    }
+                    #ul_right{
+                        width: 60%;
+                        li {
+                            display: flex;
+                            i {
+                                padding-top: 4px;
+                                margin-right: 2px;
+                            }
+                        }
+                        span {
+                            width: 60px;
+                            color: #525a61;
+                            font-weight: 700;
+                            margin-right: 5px;
+                        }
+                        ul{
+                            margin-bottom: 7px;
+                            li {
+                                color: #666666;
+                            }
+                        }
+                        #second_2 li{
+                            float: left;
+                            margin-right: 9px;
+                        }
                     }
                 }
             }
+            #introduce, #publish_coment {
+                width: 100%;
+                height: auto;
+                margin-top: 60px;
+                padding-bottom: 20px;
+                &:hover{
+                    cursor: pointer;
+                }
+                h3{
+                    font-size: 20px;
+                    color: #59667a;
+                    &:hover{
+                        cursor: context-menu;
+                    }
+                }
+                hr {
+                    margin: 12px 0;
+                    height: 3px;
+                    background: #59667a;
+                    &:hover{
+                        cursor: context-menu;
+                    }
+                }
+                p {
+                    font-size: 14px;
+                    color: #333333;
+                }
+                .toggle {
+                    display: none;
+                }
+            }
+            #profile{
+                margin-top: 60px;
+                h3 {
+                    font-size: 20px;
+                    color: #59667a;
+                }
+                hr {
+                    margin: 12px 0;
+                    height: 3px;
+                    background: #59667a;
+                }
+                h4 {
+                    font-size: 20px;
+                    margin: 20px 0;
+                    cursor: pointer;
+                    &:hover {
+                        color: $blue;
+                    }
+                }
+                div {
+                    width: 100px;
+                    height: 30px;
+                    background: $blue;
+                    color: white;
+                }
+            }
+
         }
         #rightSide{
             width: 206px;
@@ -349,6 +579,18 @@ input {
         }
 
     }
-
 }
 
+.open, .close {
+    font-size: 14px;
+    cursor: pointer;
+    position: absolute;
+    bottom:0;
+    right:0;
+    color: $blue;
+    display: none;
+}
+
+.on{
+    display: block;
+}

@@ -46,6 +46,49 @@ $.ajax({
         $("#info_title").eq(i).text(msg.documents[i].title);
         $("#info_author").eq(i).prepend("<span>"+msg.documents[i].authors+"</span>");
         $("#info_publisher").eq(i).prepend("<span>"+msg.documents[i].publisher+"</span>");
+        $("#book_price").eq(i).text(msg.documents[i].price+"원");
+        $("#isbn").eq(i).text(msg.documents[i].isbn.substring(0,10));
+        $("#date").eq(i).text(msg.documents[i].datetime.replaceAll('-','.').substring(0,10)+". 종이책 출간");
+        $("h4").eq(i).text(msg.documents[i].authors);
+
         }
     });
 
+$(document).ready(function(){
+    $(".open").addClass("on");
+    $.get("txt/introduce.txt", function (data) {
+        $("#introduce").html(data);
+    });
+    $.get("txt/publish_coment.txt", function (data) {
+        $("#publish_coment").html(data);
+    })
+})
+
+$(".open").click(function(){
+    var openIdx = $(".open").index(this);
+    console.log(openIdx)
+    $(".toggle").eq(openIdx).stop().slideDown("fast");
+    $(this).removeClass("on");
+    $(".close").eq(openIdx).addClass("on");
+})
+
+$(".close").click(function(){
+    var closeIdx = $(".close").index(this);
+    $(".toggle").eq(closeIdx).stop().slideUp("fast");
+    $(this).removeClass("on");
+    $(".open").eq(closeIdx).addClass("on");
+});
+
+$(".open_div").click(function(){
+    var divIdx = $(".open_div").index(this);
+    console.log(divIdx)
+    if($(".open").eq(divIdx).hasClass("on")){
+        $(".toggle").eq(divIdx).stop().slideDown("fast");
+        $(".open").eq(divIdx).removeClass("on");
+        $(".close").eq(divIdx).addClass("on");
+    } else {
+        $(".toggle").eq(divIdx).stop().slideUp("fast");
+        $(".close").eq(divIdx).removeClass("on");
+        $(".open").eq(divIdx).addClass("on");
+    }
+});
