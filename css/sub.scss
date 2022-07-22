@@ -140,7 +140,7 @@ p,i,li,span,div,td,section, textarea {
     }
 }
 
-input { 
+#search_input { 
     width: 210px;
     border: none;
     background: transparent;
@@ -627,9 +627,7 @@ section {
                                     background: url(../img/sub/star.svg) no-repeat;
                                     display: inline-block;
                                 .star_wrap{
-
                                         overflow: hidden;
-
                                         height: 10px;
                                         .full{
                                             width: 50px;
@@ -699,7 +697,7 @@ section {
                     display: flex;
                     #box_left {
                         width: 120px;
-                        padding: 20px 10px;
+                        padding: 30px 10px;
                         p {
                             text-align: center;
                             &:first-child {
@@ -834,11 +832,255 @@ section {
                             border: 1px solid #666666;
                             border-radius: 5px;
                         }
+                        #btn_wrap {
+                            margin-top: 10px;
+                            width: 100%;
+                            height: 35px;
+                            display: flex;
+                            #rev_btn {
+                                &_1 {
+                                    cursor: pointer;
+                                    width: 160px;
+                                    height: 35px;
+                                    font-size: 13px;
+                                    border: 1px solid $border_2;
+                                    color : #808991;
+                                    @include flex;
+                                    border-radius: 5px;
+                                    &:hover {
+                                        background: rgba(128, 137, 145, 0.1);
+                                    }
+                                }
+                                &_2 {
+                                    cursor: pointer;
+                                    margin-left: calc(100% - 160px - 150px - 85px);
+                                    width: 150px;
+                                    @include flex;
+                                    #spoiler {
+                                        cursor: pointer;
+                                        width: 18px;
+                                        height: 18px;
+                                        margin-right: 5px;
+                                    }
+                                    label {
+                                        cursor: pointer;
+                                        font-size: 13px;
+                                        color : #636c73;
+                                        font-weight: 700;
+                                    }
+                                }
+                                &_3 {
+                                    margin-left: 10px;
+                                    width: 95px;
+                                    height: 35px;
+                                    font-size: 13px;
+                                    @include flex;
+                                    background: $blue;
+                                    opacity: 0.5;
+                                    color:white;
+                                    border-radius: 5px;
+                                    justify-self: flex-end;
+                                }
+                            }
+
+                        }
 
                     }
 
                 }
-                
+                #review_list_wrap {
+                    #review_tab {
+                        display: flex;
+                        justify-content: space-between;
+                        color: #b8bfc4;
+                        border-bottom: 2px solid #b8bfc4;
+                        padding: 5px 0;
+
+                        ul li {
+                            cursor: pointer;
+                            float: left;
+
+                        }
+                        .tab_menu {
+                            font-size: 16px;
+                            margin-right: 15px;
+                            color: #808991;
+                            position: relative;
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                left: 0;
+                                bottom: -7px;
+                                width: 100%;
+                                height: 2px;
+                                background: #b8bfc4;
+                            }
+                            &:hover::after{
+                                background: #808991;
+                            }
+                            &:hover {
+                                color: #808991;
+                            }
+                            span {
+                                color :#b8bfc4
+                            }
+                            &.tab_on {
+                                &::after{
+                                    background:#40474d;
+                                }
+                                color :#40474d;
+                                span {
+                                    color :#40474d;
+
+                                }
+                            }
+                        }
+                        .sort {
+                            font-size: 13px;
+                            padding-top: 5px;
+                            &:not(:first-child)::before {
+                                content: "";
+                                width: 1px;
+                                height: 10px;
+                                margin: 0 5px;
+                                display: inline-block;
+                                background: $border_2;
+                            }
+                            &.sort_on {
+                                color: #303538;
+                            }
+                            &:hover {
+                                color: #303538;
+                            }
+
+                        }
+                    }
+                    #review_list {
+                        li {
+                            padding-top: 20px;
+                            border-bottom: 1px solid $border_2;
+                            display: flex;
+                            .writer_info {
+                                width: 120px;
+                                font-size: 12px;
+                                color: #808991;
+                                div {
+                                    margin-bottom: 8px;
+                                }
+                                .writer {
+                                    &_star {
+                                        width: 60px;
+                                        height: 12px;
+                                        .star_cover{
+                                                width: 60px;
+                                                height: 12px;
+                                                background: url(../img/sub/star.svg) no-repeat;
+                                                display: inline-block;
+                                            .star_wrap{
+                                                    width: 80%;
+                                                    overflow: hidden;
+                                                    height: 12px;
+                                                    .full{
+                                                        width: 60px;
+                                                        height: 12px;
+                                                        background: url(../img/sub/star_full.svg) no-repeat;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        &_id {
+                                            color: #212529;
+                                        }
+                                }
+                                .buyer {
+                                    background: #7d8e9e;
+                                    color :white;
+                                    padding: 2px;
+                                    border-radius: 2px;
+                                    margin-left: 7px;
+                                    font-size: 11px;
+                                }
+                                .report {
+                                    font-weight: 700;
+                                    cursor: pointer;
+                                    &::before {
+                                        content: "";
+                                        width: 3px;
+                                        height: 3px;
+                                        background: $border_2;
+                                        margin: 3px 4px;
+                                        display: inline-block;
+                                    }
+                                }
+                            }
+                            .review_txt {
+                                width: calc(100% - 120px);
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                .text{
+                                    width: 100%;
+                                    height: auto;
+                                    font-size: 14px;
+                                    color: #212529;
+                                }
+                                .text_hide {
+                                    padding: 20px 0;
+                                    color: #808080;
+                                    font-size: 14px;
+                                    text-align: center;
+                                    background: $border_2;
+                                    i {
+                                        margin-right: 5px;
+                                    }
+                                    span {
+                                        cursor: pointer;
+                                        font-weight: 700;
+                                    }
+                                    display: none;
+                                }
+                                .review_txt_btn {
+                                    font-size: 12px;
+                                    color: #808991;
+                                    margin-bottom: 10px;
+                                    display: flex;
+                                    justify-content: flex-end;
+                                    .reply {
+                                        width: 60px;
+                                        height: 25px;
+                                        border: 1px solid #808080;
+                                        border-radius: 4px;
+                                        @include flex;
+                                        i {
+                                            margin-right: 3px;
+                                            padding-top: 2px;
+                                        }
+                                        cursor: pointer;
+                                        &:hover {
+                                            background: rgba(128, 137, 145, 0.1);
+                                        }
+                                    }
+                                    .good {
+                                        margin-left: 10px;
+                                        width: 50px;
+                                        height: 25px;
+                                        border: 1px solid #808080;
+                                        border-radius: 4px;
+                                        @include flex;
+                                        i {
+                                            margin-right: 3px;
+                                            padding-top: 2px;
+                                        }
+                                        cursor: pointer;
+                                        &:hover {
+                                            background: rgba(128, 137, 145, 0.1);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
         }

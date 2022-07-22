@@ -32,7 +32,7 @@
         <div id ="topImg">
             <div class="wrap">
                 <div id="logo" onclick="location.href='index.html';"><img src="img/logo_lidi.svg"></div>
-                <div id="search"><i class="fa-solid fa-magnifying-glass"></i><input type="text"></div>
+                <div id="search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="search_input"></div>
                 <div id="icon">
                     <i class="fa-solid fa-bell fa-fw"></i>
                     <i class="fa-solid fa-cart-shopping fa-fw"></i>
@@ -140,13 +140,13 @@
                         </ul>
                     </div>
                 </section>
-                <section class="open_div">
-                    <div id="introduce"></div>
+                <section>
+                    <div id="introduce" class="open_div"></div>
                     <div class="open">펼쳐보기<i class="fa-solid fa-circle-chevron-down"></i></div>
                     <div class="close">접기<i class="fa-solid fa-circle-chevron-up"></i></div>
                 </section>
-                <section class="open_div">
-                    <div id="publish_coment"></div>
+                <section>
+                    <div id="publish_coment" class="open_div"></div>
                     <div class="open">펼쳐보기<i class="fa-solid fa-circle-chevron-down"></i></div>
                     <div class="close">접기<i class="fa-solid fa-circle-chevron-up"></i></div>
                 </section>
@@ -155,7 +155,7 @@
                         <h3>저자 프로필</h3>
                         <hr>
                         <h4></h4>
-                        <div id="proflie_btn"><i class="fa-solid fa-plus"></i> 작가 신간알림<span>소식</span></div>
+                        <div id="profile_btn"><i class="fa-solid fa-plus"></i> 작가 신간알림<span>소식</span></div>
                         <ul>
                             <li><span>출생</span><span>1974년</span></li>
                             <li><span>학력</span><span>고려대학교 국어국문학과</span></li>
@@ -239,8 +239,8 @@
                 <section>
                     <div id="intro_author"></div>
                 </section>
-                <section class="open_div">
-                    <div id="book_content"></div>
+                <section>
+                    <div id="book_content" class="open_div"></div>
                     <div class="open">펼쳐보기<i class="fa-solid fa-circle-chevron-down"></i></div>
                     <div class="close">접기<i class="fa-solid fa-circle-chevron-up"></i></div>
                 </section>
@@ -279,10 +279,312 @@
                                     <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
                                 </div>
                                 <textarea cols="30" rows="10">리뷰 작성 시 광고 및 욕설, 비속어나 타인을 비방하는 문구를 사용하시면 비공개 될 수 있습니다.</textarea>
-                                <div id="btn_wrap"></div>
+                                <div id="btn_wrap">
+                                    <div id="rev_btn_1"><i class="fa-solid fa-triangle-exclamation"></i>리뷰 작성 유의사항</div>
+                                    <form id="rev_btn_2">
+                                        <input type="checkbox" name="spoiler" id="spoiler">
+                                        <label for="spoiler">스포일러가 있습니다.</label>
+                                    </form>
+                                    <div id="rev_btn_3">리뷰 남기기</div>
+                                </div>
                             </div>
                         </div>
-
+                        <div id="review_list_wrap">
+                            <div id="review_tab">
+                                <ul>
+                                    <li id="tab_1" class="tab_menu">구매자 <span>209</span></li>
+                                    <li id="tab_2" class="tab_menu">전체 <span>219</span></li>
+                                </ul>
+                                <ul>
+                                    <li class="sort" id="sort_1">최신순</li>
+                                    <li class="sort" id="sort_2">공감순</li>
+                                    <li class="sort" id="sort_3">별점 높은순</li>
+                                    <li class="sort" id="sort_4">별점 낮은순</li>
+                                </ul>
+                            </div>
+                            <ul id="review_list">
+                                <li>
+                                    <div class="writer_info">
+                                        <div class="writer_star">
+                                            <div class="star_cover">
+                                                <div class="star_wrap" id="star_review_1">
+                                                    <div class="full"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="writer_id"></span><span class="buyer">구매자</span>
+                                        </div>
+                                        <div>
+                                            <span class="writer_date"></span><span class="report">신고</span>
+                                        </div>
+                                    </div>
+                                    <div class="review_txt">
+                                        <div class="text"></div>
+                                        <div class="text_hide">
+                                            <i class="fa-solid fa-triangle-exclamation"></i>스포일러가 있는 리뷰입니다.<br>
+                                            <span>리뷰 보기 <i class="fa-solid fa-angles-right"></i></span>
+                                        </div>
+                                        <div class="review_txt_btn">
+                                            <div class="reply"><i class="fa-solid fa-comment"></i>댓글</div>
+                                            <div class="good"><i class="fa-solid fa-thumbs-up"></i>0</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="writer_info">
+                                        <div class="writer_star">
+                                            <div class="star_cover">
+                                                <div class="star_wrap" id="star_review_2">
+                                                    <div class="full"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="writer_id"></span><span class="buyer">구매자</span>
+                                        </div>
+                                        <div>
+                                            <span class="writer_date"></span><span class="report">신고</span>
+                                        </div>
+                                    </div>
+                                    <div class="review_txt">
+                                        <div class="text"></div>
+                                        <div class="text_hide">
+                                            <i class="fa-solid fa-triangle-exclamation"></i>스포일러가 있는 리뷰입니다.<br>
+                                            <span>리뷰 보기 <i class="fa-solid fa-angles-right"></i></span>
+                                        </div>
+                                        <div class="review_txt_btn">
+                                            <div class="reply"><i class="fa-solid fa-comment"></i>댓글</div>
+                                            <div class="good"><i class="fa-solid fa-thumbs-up"></i>0</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="writer_info">
+                                        <div class="writer_star">
+                                            <div class="star_cover">
+                                                <div class="star_wrap" id="star_review_3">
+                                                    <div class="full"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="writer_id"></span><span class="buyer">구매자</span>
+                                        </div>
+                                        <div>
+                                            <span class="writer_date"></span><span class="report">신고</span>
+                                        </div>
+                                    </div>
+                                    <div class="review_txt">
+                                        <div class="text"></div>
+                                        <div class="text_hide">
+                                            <i class="fa-solid fa-triangle-exclamation"></i>스포일러가 있는 리뷰입니다.<br>
+                                            <span>리뷰 보기 <i class="fa-solid fa-angles-right"></i></span>
+                                        </div>
+                                        <div class="review_txt_btn">
+                                            <div class="reply"><i class="fa-solid fa-comment"></i>댓글</div>
+                                            <div class="good"><i class="fa-solid fa-thumbs-up"></i>0</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="writer_info">
+                                        <div class="writer_star">
+                                            <div class="star_cover">
+                                                <div class="star_wrap" id="star_review_4">
+                                                    <div class="full"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="writer_id"></span><span class="buyer">구매자</span>
+                                        </div>
+                                        <div>
+                                            <span class="writer_date"></span><span class="report">신고</span>
+                                        </div>
+                                    </div>
+                                    <div class="review_txt">
+                                        <div class="text"></div>
+                                        <div class="text_hide">
+                                            <i class="fa-solid fa-triangle-exclamation"></i>스포일러가 있는 리뷰입니다.<br>
+                                            <span>리뷰 보기 <i class="fa-solid fa-angles-right"></i></span>
+                                        </div>
+                                        <div class="review_txt_btn">
+                                            <div class="reply"><i class="fa-solid fa-comment"></i>댓글</div>
+                                            <div class="good"><i class="fa-solid fa-thumbs-up"></i>0</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="writer_info">
+                                        <div class="writer_star">
+                                            <div class="star_cover">
+                                                <div class="star_wrap" id="star_review_5">
+                                                    <div class="full"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="writer_id"></span><span class="buyer">구매자</span>
+                                        </div>
+                                        <div>
+                                            <span class="writer_date"></span><span class="report">신고</span>
+                                        </div>
+                                    </div>
+                                    <div class="review_txt">
+                                        <div class="text"></div>
+                                        <div class="text_hide">
+                                            <i class="fa-solid fa-triangle-exclamation"></i>스포일러가 있는 리뷰입니다.<br>
+                                            <span>리뷰 보기 <i class="fa-solid fa-angles-right"></i></span>
+                                        </div>
+                                        <div class="review_txt_btn">
+                                            <div class="reply"><i class="fa-solid fa-comment"></i>댓글</div>
+                                            <div class="good"><i class="fa-solid fa-thumbs-up"></i>0</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="writer_info">
+                                        <div class="writer_star">
+                                            <div class="star_cover">
+                                                <div class="star_wrap" id="star_review_6">
+                                                    <div class="full"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="writer_id"></span><span class="buyer">구매자</span>
+                                        </div>
+                                        <div>
+                                            <span class="writer_date"></span><span class="report">신고</span>
+                                        </div>
+                                    </div>
+                                    <div class="review_txt">
+                                        <div class="text"></div>
+                                        <div class="text_hide">
+                                            <i class="fa-solid fa-triangle-exclamation"></i>스포일러가 있는 리뷰입니다.<br>
+                                            <span>리뷰 보기 <i class="fa-solid fa-angles-right"></i></span>
+                                        </div>
+                                        <div class="review_txt_btn">
+                                            <div class="reply"><i class="fa-solid fa-comment"></i>댓글</div>
+                                            <div class="good"><i class="fa-solid fa-thumbs-up"></i>0</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="writer_info">
+                                        <div class="writer_star">
+                                            <div class="star_cover">
+                                                <div class="star_wrap" id="star_review_7">
+                                                    <div class="full"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="writer_id"></span><span class="buyer">구매자</span>
+                                        </div>
+                                        <div>
+                                            <span class="writer_date"></span><span class="report">신고</span>
+                                        </div>
+                                    </div>
+                                    <div class="review_txt">
+                                        <div class="text"></div>
+                                        <div class="text_hide">
+                                            <i class="fa-solid fa-triangle-exclamation"></i>스포일러가 있는 리뷰입니다.<br>
+                                            <span>리뷰 보기 <i class="fa-solid fa-angles-right"></i></span>
+                                        </div>
+                                        <div class="review_txt_btn">
+                                            <div class="reply"><i class="fa-solid fa-comment"></i>댓글</div>
+                                            <div class="good"><i class="fa-solid fa-thumbs-up"></i>0</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="writer_info">
+                                        <div class="writer_star">
+                                            <div class="star_cover">
+                                                <div class="star_wrap" id="star_review_8">
+                                                    <div class="full"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="writer_id"></span><span class="buyer">구매자</span>
+                                        </div>
+                                        <div>
+                                            <span class="writer_date"></span><span class="report">신고</span>
+                                        </div>
+                                    </div>
+                                    <div class="review_txt">
+                                        <div class="text"></div>
+                                        <div class="text_hide">
+                                            <i class="fa-solid fa-triangle-exclamation"></i>스포일러가 있는 리뷰입니다.<br>
+                                            <span>리뷰 보기 <i class="fa-solid fa-angles-right"></i></span>
+                                        </div>
+                                        <div class="review_txt_btn">
+                                            <div class="reply"><i class="fa-solid fa-comment"></i>댓글</div>
+                                            <div class="good"><i class="fa-solid fa-thumbs-up"></i>0</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="writer_info">
+                                        <div class="writer_star">
+                                            <div class="star_cover">
+                                                <div class="star_wrap" id="star_review_9">
+                                                    <div class="full"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="writer_id"></span><span class="buyer">구매자</span>
+                                        </div>
+                                        <div>
+                                            <span class="writer_date"></span><span class="report">신고</span>
+                                        </div>
+                                    </div>
+                                    <div class="review_txt">
+                                        <div class="text"></div>
+                                        <div class="text_hide">
+                                            <i class="fa-solid fa-triangle-exclamation"></i>스포일러가 있는 리뷰입니다.<br>
+                                            <span>리뷰 보기 <i class="fa-solid fa-angles-right"></i></span>
+                                        </div>
+                                        <div class="review_txt_btn">
+                                            <div class="reply"><i class="fa-solid fa-comment"></i>댓글</div>
+                                            <div class="good"><i class="fa-solid fa-thumbs-up"></i>0</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="writer_info">
+                                        <div class="writer_star">
+                                            <div class="star_cover">
+                                                <div class="star_wrap" id="star_review_10">
+                                                    <div class="full"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <span class="writer_id"></span><span class="buyer">구매자</span>
+                                        </div>
+                                        <div>
+                                            <span class="writer_date"></span><span class="report">신고</span>
+                                        </div>
+                                    </div>
+                                    <div class="review_txt">
+                                        <div class="text"></div>
+                                        <div class="text_hide">
+                                            <i class="fa-solid fa-triangle-exclamation"></i>스포일러가 있는 리뷰입니다.<br>
+                                            <span>리뷰 보기 <i class="fa-solid fa-angles-right"></i></span>
+                                        </div>
+                                        <div class="review_txt_btn">
+                                            <div class="reply"><i class="fa-solid fa-comment"></i>댓글</div>
+                                            <div class="good"><i class="fa-solid fa-thumbs-up"></i>0</div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
             </div>

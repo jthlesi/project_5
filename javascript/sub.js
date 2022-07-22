@@ -56,6 +56,8 @@ $.ajax({
 
 $(document).ready(function(){
     $(".open").addClass("on");
+    $("#tab_1").addClass("tab_on");
+    $("#sort_1").addClass("sort_on");
     $.get("txt/introduce.txt", function (data) {
         $("#introduce").html(data);
     });
@@ -68,13 +70,46 @@ $(document).ready(function(){
     $.get("txt/content.txt", function (data) {
         $("#book_content").html(data);
     })
+    $.get("txt/review_0.txt", function (data) {
+        $(".review_txt .text").eq(0).html(data);
+    })
+    $.get("txt/review_1.txt", function (data) {
+        $(".review_txt .text").eq(1).html(data);
+    })
+    $.get("txt/review_2.txt", function (data) {
+        $(".review_txt .text").eq(2).html(data);
+    })
+    $.get("txt/review_3.txt", function (data) {
+        $(".review_txt .text").eq(3).html(data);
+    })
+    $.get("txt/review_4.txt", function (data) {
+        $(".review_txt .text").eq(4).html(data);
+    })
+    $.get("txt/review_5.txt", function (data) {
+        $(".review_txt .text").eq(5).html(data);
+    })
+    $.get("txt/review_6.txt", function (data) {
+        $(".review_txt .text").eq(6).html(data);
+    })
+    $.get("txt/review_7.txt", function (data) {
+        $(".review_txt .text").eq(7).html(data);
+    })
+    $.get("txt/review_8.txt", function (data) {
+        $(".review_txt .text").eq(8).html(data);
+    })
+    $.get("txt/review_9.txt", function (data) {
+        $(".review_txt .text").eq(9).html(data);
+    })
+
 })
 
 $(".open").click(function(){
     var openIdx = $(".open").index(this);
-    $(".toggle").eq(openIdx).stop().slideDown("fast");
-    $(this).removeClass("on");
     $(".close").eq(openIdx).addClass("on");
+    $(".open").eq(openIdx).removeClass("on");
+    $(".toggle").eq(openIdx).stop().slideDown("fast");
+
+
 })
 
 $(".close").click(function(){
@@ -122,3 +157,38 @@ $("#star_selec span").on("mouseenter", function(){
     $("#star_text_0").show();
     $(".star_text").hide()
 })
+
+$(document).ready(function(){
+    for (i=0;i<=10;i++){
+        var char = Math.random().toString(36).substring(2,5);
+        const d = new Date();
+        let writeDay = d.toLocaleDateString();
+        $(".writer_id").eq(i).text(char+"***");
+        $(".writer_date").eq(i).text(writeDay);
+    }
+    $(".text").eq(3).hide();
+    $(".text_hide").eq(3).show();
+    $(".text").eq(5).hide();
+    $(".text_hide").eq(5).show();
+
+})
+
+$(".text_hide span").on("click", function(){
+    var hideIdx = $(".text_hide span").index(this);
+    $(".text").eq(hideIdx).show();
+    $(".text_hide").eq(hideIdx).hide();
+})
+
+$(".tab_menu").on("click", function(){
+    $(this).addClass("tab_on").siblings().removeClass("tab_on");
+    if($("#tab_2").hasClass("tab_on")) {
+        $("#sort_3, #sort_4").hide();
+    } else {
+        $("#sort_3, #sort_4").show();
+    }
+});
+
+$(".sort").on("click", function(){
+    $(this).addClass("sort_on").siblings().removeClass("sort_on");
+
+});
