@@ -70,51 +70,17 @@ $(document).ready(function(){
     $.get("txt/content.txt", function (data) {
         $("#book_content").html(data);
     })
-    $.get("txt/review_0.txt", function (data) {
-        $(".review_txt .text").eq(0).html(data);
-        $(".review_txt .text").eq(10).html(data);
-    })
-    $.get("txt/review_1.txt", function (data) {
-        $(".review_txt .text").eq(1).html(data);
-        $(".review_txt .text").eq(11).html(data);
-    })
-    $.get("txt/review_2.txt", function (data) {
-        $(".review_txt .text").eq(2).html(data);
-        $(".review_txt .text").eq(12).html(data);
-    })
-    $.get("txt/review_3.txt", function (data) {
-        $(".review_txt .text").eq(3).html(data);
-        $(".review_txt .text").eq(13).html(data);
-    })
-    $.get("txt/review_4.txt", function (data) {
-        $(".review_txt .text").eq(4).html(data);
-        $(".review_txt .text").eq(14).html(data);
-    })
-    $.get("txt/review_5.txt", function (data) {
-        $(".review_txt .text").eq(5).html(data);
-        $(".review_txt .text").eq(15).html(data);
-    })
-    $.get("txt/review_6.txt", function (data) {
-        $(".review_txt .text").eq(6).html(data);
-        $(".review_txt .text").eq(16).html(data);
-    })
-    $.get("txt/review_7.txt", function (data) {
-        $(".review_txt .text").eq(7).html(data);
-        $(".review_txt .text").eq(17).html(data);
-    })
-    $.get("txt/review_8.txt", function (data) {
-        $(".review_txt .text").eq(8).html(data);
-        $(".review_txt .text").eq(18).html(data);
-    })
-    $.get("txt/review_9.txt", function (data) {
-        $(".review_txt .text").eq(9).html(data);
-        $(".review_txt .text").eq(19).html(data);
-    })
+    for(var i=0;i<20;i++){
+        (function(i){
+            $.get("txt/review_"+i+".txt", function (data) {
+                $(".review_txt .text").eq(i).html(data);
+            })
+        })(i)
+    }
     $.get("txt/buyer.txt", function (data) {
         $("#buyer_toggle").html(data);
     })
-
-})
+});
 
 $(".open").click(function(){
     var openIdx = $(".open").index(this);
@@ -149,7 +115,6 @@ $.ajax({
     data: { query: "김호연", size: 5},
     headers: { Authorization: "KakaoAK ddf7da74924187d0c803e6910e6b67bc" }
 })
-
     .done(function (msg) {
         for (var i=0;i<6;i++){
         $(".other_cover").eq(i).append("<img src="+msg.documents[i].thumbnail+">");
@@ -182,13 +147,13 @@ $(document).ready(function(){
     $(".text").eq(5).hide();
     $(".text_hide").eq(5).show();
 
-})
+});
 
 $(".text_hide span").on("click", function(){
     var hideIdx = $(".text_hide span").index(this);
     $(".text").eq(hideIdx).show();
     $(".text_hide").eq(hideIdx).hide();
-})
+});
 
 $(".tab_menu").on("click", function(){
     $(this).addClass("tab_on").siblings().removeClass("tab_on");
@@ -201,12 +166,11 @@ $(".tab_menu").on("click", function(){
 
 $(".sort").on("click", function(){
     $(this).addClass("sort_on").siblings().removeClass("sort_on");
-
 });
 
 $("#more_btn").on("click", function(){
     $("#review_list_2").stop().slideDown();
-})
+});
 
 $("#buyer_more").on("click", function(){
     $("#buyer_toggle").stop().slideToggle();
@@ -214,9 +178,8 @@ $("#buyer_more").on("click", function(){
         $("i",this).removeClass("fa-angles-down").addClass("fa-angles-up");
     } else {
         $("i",this).removeClass("fa-angles-up").addClass("fa-angles-down");
-
     }
-})
+});
 
 $.ajax({
     method: "GET",
@@ -224,7 +187,6 @@ $.ajax({
     data: { query: "소설", size: 10},
     headers: { Authorization: "KakaoAK ddf7da74924187d0c803e6910e6b67bc" }
 })
-
     .done(function (msg) {
         for (var i=0;i<10;i++){
         $(".differ_cover").eq(i).append("<img src="+msg.documents[i].thumbnail+">");
@@ -244,7 +206,6 @@ $.ajax({
     data: { query: "문학", size: 10},
     headers: { Authorization: "KakaoAK ddf7da74924187d0c803e6910e6b67bc" }
 })
-
     .done(function (msg) {
         for (var i=0;i<10;i++){
         $(".another_cover").eq(i).append("<img src="+msg.documents[i].thumbnail+">");
