@@ -72,33 +72,46 @@ $(document).ready(function(){
     })
     $.get("txt/review_0.txt", function (data) {
         $(".review_txt .text").eq(0).html(data);
+        $(".review_txt .text").eq(10).html(data);
     })
     $.get("txt/review_1.txt", function (data) {
         $(".review_txt .text").eq(1).html(data);
+        $(".review_txt .text").eq(11).html(data);
     })
     $.get("txt/review_2.txt", function (data) {
         $(".review_txt .text").eq(2).html(data);
+        $(".review_txt .text").eq(12).html(data);
     })
     $.get("txt/review_3.txt", function (data) {
         $(".review_txt .text").eq(3).html(data);
+        $(".review_txt .text").eq(13).html(data);
     })
     $.get("txt/review_4.txt", function (data) {
         $(".review_txt .text").eq(4).html(data);
+        $(".review_txt .text").eq(14).html(data);
     })
     $.get("txt/review_5.txt", function (data) {
         $(".review_txt .text").eq(5).html(data);
+        $(".review_txt .text").eq(15).html(data);
     })
     $.get("txt/review_6.txt", function (data) {
         $(".review_txt .text").eq(6).html(data);
+        $(".review_txt .text").eq(16).html(data);
     })
     $.get("txt/review_7.txt", function (data) {
         $(".review_txt .text").eq(7).html(data);
+        $(".review_txt .text").eq(17).html(data);
     })
     $.get("txt/review_8.txt", function (data) {
         $(".review_txt .text").eq(8).html(data);
+        $(".review_txt .text").eq(18).html(data);
     })
     $.get("txt/review_9.txt", function (data) {
         $(".review_txt .text").eq(9).html(data);
+        $(".review_txt .text").eq(19).html(data);
+    })
+    $.get("txt/buyer.txt", function (data) {
+        $("#buyer_toggle").html(data);
     })
 
 })
@@ -108,8 +121,6 @@ $(".open").click(function(){
     $(".close").eq(openIdx).addClass("on");
     $(".open").eq(openIdx).removeClass("on");
     $(".toggle").eq(openIdx).stop().slideDown("fast");
-
-
 })
 
 $(".close").click(function(){
@@ -159,7 +170,7 @@ $("#star_selec span").on("mouseenter", function(){
 })
 
 $(document).ready(function(){
-    for (i=0;i<=10;i++){
+    for (i=0;i<20;i++){
         var char = Math.random().toString(36).substring(2,5);
         const d = new Date();
         let writeDay = d.toLocaleDateString();
@@ -192,3 +203,60 @@ $(".sort").on("click", function(){
     $(this).addClass("sort_on").siblings().removeClass("sort_on");
 
 });
+
+$("#more_btn").on("click", function(){
+    $("#review_list_2").stop().slideDown();
+})
+
+$("#buyer_more").on("click", function(){
+    $("#buyer_toggle").stop().slideToggle();
+    if($("i",this).hasClass("fa-angles-down")){
+        $("i",this).removeClass("fa-angles-down").addClass("fa-angles-up");
+    } else {
+        $("i",this).removeClass("fa-angles-up").addClass("fa-angles-down");
+
+    }
+})
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "소설", size: 10},
+    headers: { Authorization: "KakaoAK ddf7da74924187d0c803e6910e6b67bc" }
+})
+
+    .done(function (msg) {
+        for (var i=0;i<10;i++){
+        $(".differ_cover").eq(i).append("<img src="+msg.documents[i].thumbnail+">");
+        $(".differ_title").eq(i).text(msg.documents[i].title.substring(0,15));
+        $(".differ_author").eq(i).text(msg.documents[i].authors);
+        var t =msg.documents[i].title;
+        if (t.length >15){
+            $(".differ_title").eq(i).append("...");
+
+        }
+        }
+    });
+
+$.ajax({
+    method: "GET",
+    url: "https://dapi.kakao.com/v3/search/book?target=title",
+    data: { query: "문학", size: 10},
+    headers: { Authorization: "KakaoAK ddf7da74924187d0c803e6910e6b67bc" }
+})
+
+    .done(function (msg) {
+        for (var i=0;i<10;i++){
+        $(".another_cover").eq(i).append("<img src="+msg.documents[i].thumbnail+">");
+        $(".another_title").eq(i).text(msg.documents[i].title.substring(0,15));
+        $(".another_author").eq(i).text(msg.documents[i].authors.slice(0,2));
+        var t =msg.documents[i].title;
+        var au =msg.documents[i].authors;
+        if (t.length >15){
+            $(".another_title").eq(i).append("...");
+        }
+        if (au.length >3){
+            $(".another_author").eq(i).append(" 외");
+        }
+        }
+    });

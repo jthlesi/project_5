@@ -140,7 +140,7 @@ section {
 #main .subWrap {
   width: 1016px;
   margin: 0 auto;
-  height: 10000px;
+  height: auto;
   display: flex;
 }
 #main .subWrap #detailWrap {
@@ -918,43 +918,52 @@ section {
 #main .subWrap #detailWrap #review #review_list_wrap #review_tab .sort:hover {
   color: #303538;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li {
   padding-top: 20px;
   border-bottom: 1px solid #ddd;
   display: flex;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li:last-of-type, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li:last-of-type {
+  border: none;
+}
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .writer_info {
   width: 120px;
   font-size: 12px;
   color: #808991;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info div {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info div, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .writer_info div {
   margin-bottom: 8px;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .writer_star {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .writer_star, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .writer_info .writer_star {
   width: 60px;
   height: 12px;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .writer_star .star_cover {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .writer_star .star_cover, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .writer_info .writer_star .star_cover {
   width: 60px;
   height: 12px;
   background: url(../img/sub/star.svg) no-repeat;
   display: inline-block;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .writer_star .star_cover .star_wrap {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .writer_star .star_cover .star_wrap, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .writer_info .writer_star .star_cover .star_wrap {
   width: 80%;
   overflow: hidden;
   height: 12px;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .writer_star .star_cover .star_wrap .full {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .writer_star .star_cover .star_wrap .full, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .writer_info .writer_star .star_cover .star_wrap .full {
   width: 60px;
   height: 12px;
   background: url(../img/sub/star_full.svg) no-repeat;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .writer_id {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .writer_star .star_cover #star_review_3, #main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .writer_star .star_cover #star_review_4, #main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .writer_star .star_cover #star_review_6, #main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .writer_star .star_cover #star_review_8, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .writer_info .writer_star .star_cover #star_review_3, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .writer_info .writer_star .star_cover #star_review_4, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .writer_info .writer_star .star_cover #star_review_6, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .writer_info .writer_star .star_cover #star_review_8 {
+  width: 100%;
+}
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .writer_star .star_cover #star_review_2, #main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .writer_star .star_cover #star_review_9, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .writer_info .writer_star .star_cover #star_review_2, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .writer_info .writer_star .star_cover #star_review_9 {
+  width: 60%;
+}
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .writer_id, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .writer_info .writer_id {
   color: #212529;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .buyer {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .buyer, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .writer_info .buyer {
   background: #7d8e9e;
   color: white;
   padding: 2px;
@@ -962,11 +971,11 @@ section {
   margin-left: 7px;
   font-size: 11px;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .report {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .report, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .writer_info .report {
   font-weight: 700;
   cursor: pointer;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .report::before {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .writer_info .report::before, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .writer_info .report::before {
   content: "";
   width: 3px;
   height: 3px;
@@ -974,19 +983,19 @@ section {
   margin: 3px 4px;
   display: inline-block;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .review_txt {
   width: calc(100% - 120px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .text {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .text, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .review_txt .text {
   width: 100%;
   height: auto;
   font-size: 14px;
   color: #212529;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .text_hide {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .text_hide, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .review_txt .text_hide {
   padding: 20px 0;
   color: #808080;
   font-size: 14px;
@@ -994,21 +1003,21 @@ section {
   background: #ddd;
   display: none;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .text_hide i {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .text_hide i, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .review_txt .text_hide i {
   margin-right: 5px;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .text_hide span {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .text_hide span, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .review_txt .text_hide span {
   cursor: pointer;
   font-weight: 700;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .review_txt_btn {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .review_txt_btn, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .review_txt .review_txt_btn {
   font-size: 12px;
   color: #808991;
   margin-bottom: 10px;
   display: flex;
   justify-content: flex-end;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .review_txt_btn .reply {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .review_txt_btn .reply, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .review_txt .review_txt_btn .reply {
   width: 60px;
   height: 25px;
   border: 1px solid #808080;
@@ -1018,14 +1027,14 @@ section {
   justify-content: center;
   cursor: pointer;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .review_txt_btn .reply i {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .review_txt_btn .reply i, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .review_txt .review_txt_btn .reply i {
   margin-right: 3px;
   padding-top: 2px;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .review_txt_btn .reply:hover {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .review_txt_btn .reply:hover, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .review_txt .review_txt_btn .reply:hover {
   background: rgba(128, 137, 145, 0.1);
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .review_txt_btn .good {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .review_txt_btn .good, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .review_txt .review_txt_btn .good {
   margin-left: 10px;
   width: 50px;
   height: 25px;
@@ -1036,12 +1045,110 @@ section {
   justify-content: center;
   cursor: pointer;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .review_txt_btn .good i {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .review_txt_btn .good i, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .review_txt .review_txt_btn .good i {
   margin-right: 3px;
   padding-top: 2px;
 }
-#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .review_txt_btn .good:hover {
+#main .subWrap #detailWrap #review #review_list_wrap #review_list li .review_txt .review_txt_btn .good:hover, #main .subWrap #detailWrap #review #review_list_wrap #review_list_2 li .review_txt .review_txt_btn .good:hover {
   background: rgba(128, 137, 145, 0.1);
+}
+#main .subWrap #detailWrap #review #review_list_wrap #review_list_2 {
+  display: none;
+}
+#main .subWrap #detailWrap #review #review_list_wrap #more_btn {
+  margin-top: 15px;
+  cursor: pointer;
+  font-size: 13px;
+  width: 100%;
+  height: 50px;
+  border: 2px solid #d1d5d9;
+  color: #808991;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#main .subWrap #detailWrap #review #review_list_wrap #more_btn span, #main .subWrap #detailWrap #review #review_list_wrap #more_btn i {
+  color: #1e9eff;
+}
+#main .subWrap #detailWrap #review #review_list_wrap #more_btn i {
+  margin-left: 5px;
+}
+#main .subWrap #detailWrap #review #review_list_wrap #more_btn:hover {
+  background: rgba(128, 137, 145, 0.1);
+}
+#main .subWrap #detailWrap #review #review_list_wrap #buyer_more {
+  margin-top: 10px;
+  color: #808991;
+  font-size: 12px;
+  cursor: pointer;
+}
+#main .subWrap #detailWrap #review #review_list_wrap #buyer_more i {
+  margin-left: 5px;
+}
+#main .subWrap #detailWrap #review #review_list_wrap #buyer_toggle {
+  font-size: 14px;
+  color: #8595a2;
+  padding: 20px;
+  background: #f0f0f0;
+  display: none;
+  margin-top: 10px;
+}
+#main .subWrap #detailWrap #review #review_list_wrap #buyer_toggle p:first-of-type {
+  color: #303745;
+}
+#main .subWrap #detailWrap #review #review_list_wrap #buyer_toggle p:nth-of-type(even) {
+  font-weight: 700;
+}
+#main .subWrap #detailWrap #differ_book, #main .subWrap #detailWrap #another_book {
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+  padding-bottom: 20px;
+}
+#main .subWrap #detailWrap #differ_book h3, #main .subWrap #detailWrap #another_book h3 {
+  font-size: 20px;
+  color: #59667a;
+}
+#main .subWrap #detailWrap #differ_book hr, #main .subWrap #detailWrap #another_book hr {
+  margin: 12px 0 25px 0;
+  height: 3px;
+  background: #59667a;
+}
+#main .subWrap #detailWrap #differ_book #differ_list, #main .subWrap #detailWrap #differ_book #another_list, #main .subWrap #detailWrap #another_book #differ_list, #main .subWrap #detailWrap #another_book #another_list {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#main .subWrap #detailWrap #differ_book #differ_list .differ_wrap, #main .subWrap #detailWrap #differ_book #differ_list .another_wrap, #main .subWrap #detailWrap #differ_book #another_list .differ_wrap, #main .subWrap #detailWrap #differ_book #another_list .another_wrap, #main .subWrap #detailWrap #another_book #differ_list .differ_wrap, #main .subWrap #detailWrap #another_book #differ_list .another_wrap, #main .subWrap #detailWrap #another_book #another_list .differ_wrap, #main .subWrap #detailWrap #another_book #another_list .another_wrap {
+  width: 20%;
+  height: 225;
+  font-size: 13px;
+}
+#main .subWrap #detailWrap #differ_book #differ_list .differ_wrap div, #main .subWrap #detailWrap #differ_book #differ_list .another_wrap div, #main .subWrap #detailWrap #differ_book #another_list .differ_wrap div, #main .subWrap #detailWrap #differ_book #another_list .another_wrap div, #main .subWrap #detailWrap #another_book #differ_list .differ_wrap div, #main .subWrap #detailWrap #another_book #differ_list .another_wrap div, #main .subWrap #detailWrap #another_book #another_list .differ_wrap div, #main .subWrap #detailWrap #another_book #another_list .another_wrap div {
+  margin: 0 auto;
+}
+#main .subWrap #detailWrap #differ_book #differ_list .differ_wrap .differ_cover, #main .subWrap #detailWrap #differ_book #differ_list .differ_wrap .another_cover, #main .subWrap #detailWrap #differ_book #differ_list .another_wrap .differ_cover, #main .subWrap #detailWrap #differ_book #differ_list .another_wrap .another_cover, #main .subWrap #detailWrap #differ_book #another_list .differ_wrap .differ_cover, #main .subWrap #detailWrap #differ_book #another_list .differ_wrap .another_cover, #main .subWrap #detailWrap #differ_book #another_list .another_wrap .differ_cover, #main .subWrap #detailWrap #differ_book #another_list .another_wrap .another_cover, #main .subWrap #detailWrap #another_book #differ_list .differ_wrap .differ_cover, #main .subWrap #detailWrap #another_book #differ_list .differ_wrap .another_cover, #main .subWrap #detailWrap #another_book #differ_list .another_wrap .differ_cover, #main .subWrap #detailWrap #another_book #differ_list .another_wrap .another_cover, #main .subWrap #detailWrap #another_book #another_list .differ_wrap .differ_cover, #main .subWrap #detailWrap #another_book #another_list .differ_wrap .another_cover, #main .subWrap #detailWrap #another_book #another_list .another_wrap .differ_cover, #main .subWrap #detailWrap #another_book #another_list .another_wrap .another_cover {
+  cursor: pointer;
+  width: 90px;
+  height: 135px;
+}
+#main .subWrap #detailWrap #differ_book #differ_list .differ_wrap .differ_cover img, #main .subWrap #detailWrap #differ_book #differ_list .differ_wrap .another_cover img, #main .subWrap #detailWrap #differ_book #differ_list .another_wrap .differ_cover img, #main .subWrap #detailWrap #differ_book #differ_list .another_wrap .another_cover img, #main .subWrap #detailWrap #differ_book #another_list .differ_wrap .differ_cover img, #main .subWrap #detailWrap #differ_book #another_list .differ_wrap .another_cover img, #main .subWrap #detailWrap #differ_book #another_list .another_wrap .differ_cover img, #main .subWrap #detailWrap #differ_book #another_list .another_wrap .another_cover img, #main .subWrap #detailWrap #another_book #differ_list .differ_wrap .differ_cover img, #main .subWrap #detailWrap #another_book #differ_list .differ_wrap .another_cover img, #main .subWrap #detailWrap #another_book #differ_list .another_wrap .differ_cover img, #main .subWrap #detailWrap #another_book #differ_list .another_wrap .another_cover img, #main .subWrap #detailWrap #another_book #another_list .differ_wrap .differ_cover img, #main .subWrap #detailWrap #another_book #another_list .differ_wrap .another_cover img, #main .subWrap #detailWrap #another_book #another_list .another_wrap .differ_cover img, #main .subWrap #detailWrap #another_book #another_list .another_wrap .another_cover img {
+  width: 100%;
+  height: 100%;
+}
+#main .subWrap #detailWrap #differ_book #differ_list .differ_wrap .differ_title, #main .subWrap #detailWrap #differ_book #differ_list .differ_wrap .another_title, #main .subWrap #detailWrap #differ_book #differ_list .another_wrap .differ_title, #main .subWrap #detailWrap #differ_book #differ_list .another_wrap .another_title, #main .subWrap #detailWrap #differ_book #another_list .differ_wrap .differ_title, #main .subWrap #detailWrap #differ_book #another_list .differ_wrap .another_title, #main .subWrap #detailWrap #differ_book #another_list .another_wrap .differ_title, #main .subWrap #detailWrap #differ_book #another_list .another_wrap .another_title, #main .subWrap #detailWrap #another_book #differ_list .differ_wrap .differ_title, #main .subWrap #detailWrap #another_book #differ_list .differ_wrap .another_title, #main .subWrap #detailWrap #another_book #differ_list .another_wrap .differ_title, #main .subWrap #detailWrap #another_book #differ_list .another_wrap .another_title, #main .subWrap #detailWrap #another_book #another_list .differ_wrap .differ_title, #main .subWrap #detailWrap #another_book #another_list .differ_wrap .another_title, #main .subWrap #detailWrap #another_book #another_list .another_wrap .differ_title, #main .subWrap #detailWrap #another_book #another_list .another_wrap .another_title {
+  cursor: pointer;
+  width: 90px;
+  height: auto;
+  color: #333333;
+}
+#main .subWrap #detailWrap #differ_book #differ_list .differ_wrap .differ_author, #main .subWrap #detailWrap #differ_book #differ_list .differ_wrap .another_author, #main .subWrap #detailWrap #differ_book #differ_list .another_wrap .differ_author, #main .subWrap #detailWrap #differ_book #differ_list .another_wrap .another_author, #main .subWrap #detailWrap #differ_book #another_list .differ_wrap .differ_author, #main .subWrap #detailWrap #differ_book #another_list .differ_wrap .another_author, #main .subWrap #detailWrap #differ_book #another_list .another_wrap .differ_author, #main .subWrap #detailWrap #differ_book #another_list .another_wrap .another_author, #main .subWrap #detailWrap #another_book #differ_list .differ_wrap .differ_author, #main .subWrap #detailWrap #another_book #differ_list .differ_wrap .another_author, #main .subWrap #detailWrap #another_book #differ_list .another_wrap .differ_author, #main .subWrap #detailWrap #another_book #differ_list .another_wrap .another_author, #main .subWrap #detailWrap #another_book #another_list .differ_wrap .differ_author, #main .subWrap #detailWrap #another_book #another_list .differ_wrap .another_author, #main .subWrap #detailWrap #another_book #another_list .another_wrap .differ_author, #main .subWrap #detailWrap #another_book #another_list .another_wrap .another_author {
+  cursor: pointer;
+  width: 90px;
+  height: auto;
+  color: #666666;
 }
 #main .subWrap #rightSide {
   width: 206px;
@@ -1120,6 +1227,129 @@ section {
   cursor: pointer;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
+}
+
+footer {
+  margin-top: 100px;
+  width: 100%;
+  height: 400px;
+  border-top: 1px solid #f0f0f0;
+}
+footer .wrap {
+  padding: 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+footer .wrap #footIcon {
+  width: 17%;
+  height: 160px;
+  color: #787878;
+  font-size: 13px;
+  font-weight: 700;
+}
+footer .wrap #footIcon i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+footer .wrap #footIcon div {
+  margin-bottom: 20px;
+}
+footer .wrap #service {
+  width: 17%;
+  height: 160px;
+  font-size: 13px;
+  color: #787878;
+}
+footer .wrap #service h3 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+footer .wrap #service li {
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+footer .wrap #etc {
+  width: 17%;
+  height: 160px;
+  font-size: 13px;
+  color: #787878;
+}
+footer .wrap #etc h3 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+footer .wrap #etc li {
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+footer .wrap #company {
+  width: 17%;
+  height: 160px;
+  font-size: 13px;
+  color: #787878;
+}
+footer .wrap #company h3 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+footer .wrap #company li {
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+footer .wrap #company #new {
+  display: inline-block;
+  margin-left: 5px;
+  width: 15px;
+  height: 15px;
+  font-size: 1px;
+  color: white;
+  background: #1e9eff;
+  border-radius: 7px;
+  text-align: center;
+}
+footer .wrap #sns {
+  width: 32%;
+  height: 160px;
+  color: #787878;
+  display: flex;
+  justify-content: flex-end;
+}
+footer .wrap #sns div {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
+}
+footer .wrap #copy {
+  width: 100%;
+  height: auto;
+  color: #787878;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+}
+footer .wrap #copy h3 {
+  cursor: pointer;
+}
+footer .wrap #copy li {
+  margin: 10px 0;
+  float: left;
+  cursor: pointer;
+}
+footer .wrap #copy li:not(:last-of-type)::after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  background: #787878;
+  margin: 0px 7px;
+}
+footer .wrap #copy p {
+  font-size: 11px;
 }
 
 .open, .close {
