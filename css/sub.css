@@ -705,7 +705,6 @@ p, i, li, span, div, td, section, textarea {
   display: inline-block;
 }
 #main .subWrap #detailWrap #review #review_box #box_left #review_star .star_cover .star_wrap {
-  width: 92%;
   overflow: hidden;
   height: 15px;
 }

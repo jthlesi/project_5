@@ -55,6 +55,7 @@ $(document).ready(function(){
     $(".open").addClass("on");
     $("#tab_1").addClass("tab_on");
     $("#sort_1").addClass("sort_on");
+
     $.get("txt/introduce.txt", function (data) {
         $("#introduce").html(data);
     });
@@ -143,6 +144,8 @@ $(document).ready(function(){
     $(".text_hide").eq(3).show();
     $(".text").eq(5).hide();
     $(".text_hide").eq(5).show();
+
+    $(".star_wrap").css({"width":(Number($("#box_left p").eq(1).text())/5)*100 +"%"})
 });
 
 $(".text_hide span").on("click", function(){

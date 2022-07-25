@@ -39,7 +39,7 @@
     width: 17%;
     height: 160px;
     font-size: 13px;
-    color: #787878;
+    color: $gray;
     h3{
         font-weight: 700;
         margin-bottom: 10px;
@@ -736,21 +736,19 @@ p,i,li,span,div,td,section, textarea {
                             height: 15px;
                             margin: 0 auto;
                             .star_cover{
-                                    width: 75px;
-                                    height: 15px;
-                                    background: url(../img/sub/star.svg) no-repeat;
-                                    display: inline-block;
+                                width: 75px;
+                                height: 15px;
+                                background: url(../img/sub/star.svg) no-repeat;
+                                display: inline-block;
                                 .star_wrap{
-                                        width: 92%;
-                                        overflow: hidden;
+                                    overflow: hidden;
+                                    height: 15px;
+                                    .full{
+                                        width: 75px;
                                         height: 15px;
-                                        .full{
-                                            width: 75px;
-                                            height: 15px;
-                                            background: url(../img/sub/star_full.svg) no-repeat;
-                                        }
+                                        background: url(../img/sub/star_full.svg) no-repeat;
                                     }
-        
+                            }
                             }
                         }
                         #static {
@@ -760,17 +758,13 @@ p,i,li,span,div,td,section, textarea {
                             li {
                                 margin: 5px 0;
                             }
-
                             .bar_wrap {
                                 display: inline-block;
                                 width: 70px;
                                 height: 10px;
                                 margin-left: 2px;
-
                                 background: #e8edf3;
-
                                 .bar {
-
                                     height: 10px;
                                     background: linear-gradient(#9daab5,#718392);
                                 }
@@ -792,7 +786,6 @@ p,i,li,span,div,td,section, textarea {
                                     }
                                 }
                             }
-
                         }
                     }
                     #box_right {
@@ -900,9 +893,7 @@ p,i,li,span,div,td,section, textarea {
                             }
 
                         }
-
                     }
-
                 }
                 #review_list_wrap {
                     #review_tab {
@@ -1286,9 +1277,7 @@ p,i,li,span,div,td,section, textarea {
                     }
                 }
             }
-
         }
-
     }
 }
 
