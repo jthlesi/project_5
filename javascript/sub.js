@@ -11,7 +11,6 @@ $.ajax({
         }
     });
 
-
 $.ajax({
     method: "GET",
     url: "https://dapi.kakao.com/v3/search/book?target=title",
@@ -30,8 +29,7 @@ $.ajax({
                 $("#bestRank li").eq(i).children("span:last").append("...")
             }
         }
-       
-    });
+   });
 
 $.ajax({
     method: "GET",
@@ -50,7 +48,6 @@ $.ajax({
         $("#isbn").eq(i).text(msg.documents[i].isbn.substring(0,10));
         $("#date").eq(i).text(msg.documents[i].datetime.replaceAll('-','.').substring(0,10)+". 종이책 출간");
         $("h4").eq(i).text(msg.documents[i].authors);
-
         }
     });
 
@@ -146,7 +143,6 @@ $(document).ready(function(){
     $(".text_hide").eq(3).show();
     $(".text").eq(5).hide();
     $(".text_hide").eq(5).show();
-
 });
 
 $(".text_hide span").on("click", function(){
@@ -195,7 +191,6 @@ $.ajax({
         var t =msg.documents[i].title;
         if (t.length >15){
             $(".differ_title").eq(i).append("...");
-
         }
         }
     });

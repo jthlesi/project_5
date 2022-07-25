@@ -6,7 +6,7 @@
   font-style: normal;
 }
 p, i, li, span, div, td, section, textarea {
-  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Helvetica Neue", ridi-roboto, "Noto Sans KR", sans-serif;
+  font-family: "Apple SD Gothic Neo", "Helvetica Neue", "Noto Sans KR", sans-serif;
 }
 
 .wrap {
@@ -129,10 +129,6 @@ p, i, li, span, div, td, section, textarea {
   font-size: 28px;
 }
 
-section {
-  position: relative;
-}
-
 #main {
   width: 100%;
   height: auto;
@@ -147,7 +143,11 @@ section {
   width: 810px;
   height: 100%;
   padding: 30px 30px;
+  position: relative;
   border-right: 1px solid #ddd;
+}
+#main .subWrap #detailWrap > div {
+  position: relative;
 }
 #main .subWrap #detailWrap #detail_top {
   width: 100%;
@@ -1123,7 +1123,7 @@ section {
 }
 #main .subWrap #detailWrap #differ_book #differ_list .differ_wrap, #main .subWrap #detailWrap #differ_book #differ_list .another_wrap, #main .subWrap #detailWrap #differ_book #another_list .differ_wrap, #main .subWrap #detailWrap #differ_book #another_list .another_wrap, #main .subWrap #detailWrap #another_book #differ_list .differ_wrap, #main .subWrap #detailWrap #another_book #differ_list .another_wrap, #main .subWrap #detailWrap #another_book #another_list .differ_wrap, #main .subWrap #detailWrap #another_book #another_list .another_wrap {
   width: 20%;
-  height: 225;
+  height: 225px;
   font-size: 13px;
 }
 #main .subWrap #detailWrap #differ_book #differ_list .differ_wrap div, #main .subWrap #detailWrap #differ_book #differ_list .another_wrap div, #main .subWrap #detailWrap #differ_book #another_list .differ_wrap div, #main .subWrap #detailWrap #differ_book #another_list .another_wrap div, #main .subWrap #detailWrap #another_book #differ_list .differ_wrap div, #main .subWrap #detailWrap #another_book #differ_list .another_wrap div, #main .subWrap #detailWrap #another_book #another_list .differ_wrap div, #main .subWrap #detailWrap #another_book #another_list .another_wrap div {
