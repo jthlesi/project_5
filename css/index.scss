@@ -211,6 +211,7 @@ input {
     height: 40px;
     @include flex;
     font-size: 28px;
+    cursor: pointer;
 }
 
 #nav{
