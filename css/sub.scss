@@ -170,7 +170,10 @@ p,i,li,span,div,td,section, textarea {
     height: 40px;
     @include flex;
     font-size: 28px;
-    cursor: pointer;
+    i {
+        margin: 0 10px;
+        cursor: pointer;
+    }
 }
 
 #main{
