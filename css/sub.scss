@@ -169,9 +169,9 @@ p,i,li,span,div,td,section, textarea {
     width: 180px;
     height: 40px;
     @include flex;
-    font-size: 28px;
+    font-size: 30px;
     i {
-        margin: 0 10px;
+        margin: 0 7px;
         cursor: pointer;
     }
 }
@@ -1230,6 +1230,7 @@ p,i,li,span,div,td,section, textarea {
                     color: white;
                     @include flex;
                     border-radius: 4px;
+                    cursor: pointer;
                 }
                 #sideCover{
                     width: 100px;

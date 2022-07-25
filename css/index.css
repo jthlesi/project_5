@@ -130,10 +130,10 @@ input:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 30px;
 }
 #icon i {
-  margin: 0 10px;
+  margin: 0 7px;
   cursor: pointer;
 }
 

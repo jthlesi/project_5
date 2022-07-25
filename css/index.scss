@@ -210,13 +210,12 @@ input {
     width: 180px;
     height: 40px;
     @include flex;
-    font-size: 28px;
+    font-size: 30px;
     i {
-        margin: 0 10px;
+        margin: 0 7px;
         cursor: pointer;
     }
 }
-
 
 #nav{
     .wrap{
