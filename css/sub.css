@@ -588,6 +588,7 @@ p, i, li, span, div, td, section, textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 }
 #main .subWrap #detailWrap #other_book #other .other_wrap .other_cover {
   width: 90px;

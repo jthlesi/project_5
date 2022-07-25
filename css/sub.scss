@@ -624,6 +624,7 @@ p,i,li,span,div,td,section, textarea {
                         display: flex;
                         flex-direction: column;
                         align-items: center;
+                        cursor: pointer;
                         .other_cover{
                             width: 90px;
                             height: 135px;
